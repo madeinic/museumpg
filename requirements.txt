@@ -1,3 +1,4 @@
+moderngl
 pygame==2.5.2
 PyGLM==2.7.1
 PyOpenGL==3.1.7
