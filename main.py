@@ -1,6 +1,8 @@
 import pygame as pg
 import moderngl as mgl
-import sys
+import sys 
+from model import *
+from camera import Camera
 
 class GraphicsEngine:
     def __init__(self, win_size=(1600, 900)):
@@ -20,24 +22,40 @@ class GraphicsEngine:
        
         # crear objeto que haga seguimiento del tiempo
         self.clock = pg.time.Clock()
+        self.time = 0
+        
+        #instanciación de una camara
+        self.camera = Camera(self)
+        
+        #creacion de la escena (elementos en pantalla)
+        self.scene = Cubo(self)
 
+    #funcion que detecta eventos y actua en consecuencia (como el presionado de teclas)
     def check_events(self):
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
+                self.scene.destroy()
                 pg.quit()
                 sys.exit()
 
     def render(self):
         # limpiar framebuffer
         self.ctx.clear(color=(0.08, 0.16, 0.18))
+        # renderizar escena
+        self.scene.render()
         # intercambiar buffers
         pg.display.flip()
+        
+        
+    def get_time(self):
+        self.time = pg.time.get_ticks() * 0.001
 
     def run(self):
         while True:
+            self.get_time()
             self.check_events()
             self.render()
-            #establecer framerate
+            #establecer framerate (fps)
             self.delta_time = self.clock.tick(60)
 
 
