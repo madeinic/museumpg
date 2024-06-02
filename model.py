@@ -1,5 +1,6 @@
 import numpy as np
 import glm
+import pygame as pg
 
 #metodo constructor
 class Cubo:
@@ -10,7 +11,18 @@ class Cubo:
         self.shader_program = self.get_shader_program('default')
         self.vao = self.get_vao()
         self.m_model = self.get_model_matrix()
+        self.texture = self.get_texture(path='textures/peligro.png')
         self.on_init()
+    
+#crear un objeto textura y definir su numero de componentes
+    def get_texture(self, path):
+        texture = pg.image.load(path).convert()
+        #girar textura para que no esté al reves
+        texture = pg.transform.flip(texture,flip_x=False,flip_y=True)
+        texture = self.ctx.texture(size=texture.get_size(), components=3,
+                                    data=pg.image.tostring(texture, 'RGB'))
+        return texture
+
     
     #matriz modelo
     def get_model_matrix(self):
@@ -19,6 +31,9 @@ class Cubo:
     
     #enlazar matrices a los shaders
     def on_init(self):
+        self.shader_program['u_texture_0'] = 0
+        self.texture.use()
+        #mvp
         self.shader_program['m_proj'].write(self.app.camera.m_proj)
         self.shader_program['m_view'].write(self.app.camera.m_view)
         self.shader_program['m_model'].write(self.m_model)
@@ -41,7 +56,7 @@ class Cubo:
         
     #obtener el arreglo de vertices de objetos
     def get_vao(self):
-        vao = self.ctx.vertex_array(self.shader_program, [(self.vbo, '3f', 'in_position')])
+        vao = self.ctx.vertex_array(self.shader_program, [(self.vbo, '2f 3f', 'in_texcoord_0', 'in_position')])
         return vao
     
     #obtener las coordenadas de vertices y las caras del objeto
@@ -57,6 +72,20 @@ class Cubo:
                    (0, 6, 1), (0, 5, 6)]
         
         vertex_data = self.get_data(vertices, indices)
+        #pasamos las coordenadas de las caras de el cubo
+        tex_coord = [(0,0),(1,0),(1,1),(0,1)]
+        tex_coord_indices = [(0, 2, 3), (0, 1, 2),
+                            (0, 2, 3), (0, 1, 2),
+                            (0, 1, 2), (2, 3, 0),
+                            (2, 3, 0), (2, 0, 1),
+                            (0, 2, 3), (0, 1, 2),
+                            (3, 1, 2), (3, 0, 1)]
+
+        tex_coord_data = self.get_data(tex_coord,tex_coord_indices)
+        vertex_data = np.hstack([tex_coord_data,vertex_data])
+
+
+
         return vertex_data
     
     #usar la libreria numpy para recopilar los vertices y caras del objeto en un solo arreglo

@@ -19,6 +19,8 @@ class GraphicsEngine:
         
         # detectar el contexto opengl
         self.ctx = mgl.create_context()
+        #Activa Depth test para que se muestren las caras de manera correcta y cull face para que no se rendericen las caras interiores
+        self.ctx.enable(flags=mgl.DEPTH_TEST | mgl.CULL_FACE)
        
         # crear objeto que haga seguimiento del tiempo
         self.clock = pg.time.Clock()
