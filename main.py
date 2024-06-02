@@ -16,7 +16,9 @@ class GraphicsEngine:
         pg.display.gl_set_attribute(pg.GL_CONTEXT_PROFILE_MASK, pg.GL_CONTEXT_PROFILE_CORE)
         # crear contexto para opengl
         pg.display.set_mode(self.WIN_SIZE, flags=pg.OPENGL | pg.DOUBLEBUF)
-        
+        #configurar puntero del mouse para esconderlo y no limitar movimiento
+        pg.event.set_grab(True)
+        pg.mouse.set_visible(False)
         # detectar el contexto opengl
         self.ctx = mgl.create_context()
         #Activa Depth test para que se muestren las caras de manera correcta y cull face para que no se rendericen las caras interiores
@@ -25,6 +27,8 @@ class GraphicsEngine:
         # crear objeto que haga seguimiento del tiempo
         self.clock = pg.time.Clock()
         self.time = 0
+        #para que el movimiento de la camara sea independiente del frame rate
+        self.delta_time = 0
         
         #instanciación de una camara
         self.camera = Camera(self)
@@ -56,6 +60,7 @@ class GraphicsEngine:
         while True:
             self.get_time()
             self.check_events()
+            self.camera.update()
             self.render()
             #establecer framerate (fps)
             self.delta_time = self.clock.tick(60)
