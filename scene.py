@@ -5,6 +5,8 @@ class Scene:
         self.app = app
         self.objects = []
         self.load()
+        #Skybox
+        self.skybox = SkyBox(app)
 
     def add_object(self, obj):
             self.objects.append(obj)
@@ -13,9 +15,15 @@ class Scene:
             app = self.app
             add = self.add_object
             
-            add(Cubo(app, scale=(10,1,1)))
-            add(Cubo(app, tex_id=1, pos=(-3,0,0), rot=(45, 0, 30),scale=(1,10,10)))
+            n, s = 30, 2
+            for x in range(-n, n, s):
+                    for z in range(-n, n, s):
+                            add(Cubo(app, pos=(x, -s, z)))
+            add(Mono(app, pos=(0, -1, -10)))   
+            add(Gato(app, pos=(-10, -1, -10)))
+            add(Perro(app, pos=(10, -1, -10)))  
         
     def render(self):
             for obj in self.objects:
                 obj.render()
+            self.skybox.render()

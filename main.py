@@ -61,7 +61,6 @@ class GraphicsEngine:
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 self.mesh.destroy()
-                self.scene.destroy()
                 pg.quit()
                 sys.exit()
 

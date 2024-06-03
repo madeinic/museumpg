@@ -36,9 +36,29 @@ class BaseModel:
         self.vao.render()
 
 
+# Creeacion de modelo de skybox
+class SkyBox(BaseModel):
+    def __init__(self, app, vao_name='skybox', tex_id='skybox', pos = (0,0,0), rot=(0, 0, 0), scale = (1,1,1)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+    
+    def update(self):  
+        self.program['m_view'].write(glm.mat4(glm.mat3(self.camera.m_view)))
+         
+    def on_init(self):
+        #textura
+        self.texture = self.app.mesh.texture.textures[self.tex_id]
+        self.program['u_texture_skybox'] = 0
+        self.texture.use(location=0)
+        #matrices vista y proyección
+        self.program['m_proj'].write(self.camera.m_proj)
+        self.program['m_view'].write(glm.mat4(glm.mat3(self.camera.m_view)))
+        
+        
 
-class Cubo(BaseModel):
-    def __init__(self, app, vao_name='cube', tex_id=0, pos = (0,0,0), rot=(0, 0, 0), scale = (1,1,1)):
+# Clase padre para cada modelo
+class ExtendedBaseModel(BaseModel):
+    def __init__(self, app, vao_name, tex_id, pos, rot, scale):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
     
@@ -63,4 +83,32 @@ class Cubo(BaseModel):
         self.program['light.Ia'].write(self.app.light.Ia)
         self.program['light.Id'].write(self.app.light.Id)
         self.program['light.Is'].write(self.app.light.Is)
-    
+
+
+# Clases hijas
+
+class Cubo(ExtendedBaseModel):
+    def __init__(self, app, vao_name='cube', tex_id=1, pos = (0,0,0), rot=(0, 0, 0), scale = (1,1,1)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+        
+
+class Mono(ExtendedBaseModel):
+    def __init__(self, app, vao_name='mono', tex_id='mono', 
+                 pos = (0, 0, 0), rot=(-90, 0, 0), scale = (0.025, 0.025, 0.025)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+
+class Gato(ExtendedBaseModel):
+    def __init__(self, app, vao_name='gato', tex_id='gato', 
+                 pos = (0, 0, 0), rot=(-90, 0, 0), scale = (0.025, 0.025, 0.025)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+
+class Perro(ExtendedBaseModel):
+    def __init__(self, app, vao_name='perro', tex_id='perro', 
+                 pos = (0, 0, 0), rot=(-90, 0, 0), scale = (0.07, 0.07, 0.07)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
