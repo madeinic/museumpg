@@ -11,7 +11,7 @@ class Cubo:
         self.shader_program = self.get_shader_program('default')
         self.vao = self.get_vao()
         self.m_model = self.get_model_matrix()
-        self.texture = self.get_texture(path='textures/peligro.png')
+        self.texture = self.get_texture(path='textures/cesped.jpeg')
         self.on_init()
     
 #crear un objeto textura y definir su numero de componentes
@@ -19,6 +19,7 @@ class Cubo:
         texture = pg.image.load(path).convert()
         #girar textura para que no esté al reves
         texture = pg.transform.flip(texture,flip_x=False,flip_y=True)
+        #texture.fill('green')
         texture = self.ctx.texture(size=texture.get_size(), components=3,
                                     data=pg.image.tostring(texture, 'RGB'))
         return texture
@@ -29,11 +30,17 @@ class Cubo:
         m_model = glm.mat4()
         return m_model
     
-    #enlazar matrices a los shaders
+    # Acciones que se ejecutan al instanciar el objeto
     def on_init(self):
+        # Calcular la luz que afecta al objeto
+        self.shader_program['light.position'].write(self.app.light.position)
+        self.shader_program['light.Ia'].write(self.app.light.Ia)
+        self.shader_program['light.Id'].write(self.app.light.Id)
+        self.shader_program['light.Is'].write(self.app.light.Is)
+        # Cargar textura 
         self.shader_program['u_texture_0'] = 0
         self.texture.use()
-        #mvp
+        # Usar las matrices de proyeccion, vista con los shaders
         self.shader_program['m_proj'].write(self.app.camera.m_proj)
         self.shader_program['m_view'].write(self.app.camera.m_view)
         self.shader_program['m_model'].write(self.m_model)
@@ -43,6 +50,7 @@ class Cubo:
         m_model = glm.rotate(self.m_model, self.app.time, glm.vec3(0, 1, 0))
         self.shader_program['m_model'].write(m_model)
         self.shader_program['m_view'].write(self.app.camera.m_view)
+        self.shader_program['camPos'].write(self.app.camera.position)
     
     #renderizar
     def render(self):
@@ -57,7 +65,7 @@ class Cubo:
         
     #obtener el arreglo de vertices de objetos
     def get_vao(self):
-        vao = self.ctx.vertex_array(self.shader_program, [(self.vbo, '2f 3f', 'in_texcoord_0', 'in_position')])
+        vao = self.ctx.vertex_array(self.shader_program, [(self.vbo, '2f 3f 3f', 'in_texcoord_0', 'in_normal', 'in_position')])
         return vao
     
     #obtener las coordenadas de vertices y las caras del objeto
@@ -83,9 +91,17 @@ class Cubo:
                             (3, 1, 2), (3, 0, 1)]
 
         tex_coord_data = self.get_data(tex_coord,tex_coord_indices)
-        vertex_data = np.hstack([tex_coord_data,vertex_data])
-
-
+        
+        normals = [(0, 0, 1) * 6,
+                   (1, 0, 0) * 6,
+                   (0, 0,-1) * 6,
+                   (-1, 0, 0) * 6,
+                   (0, 1, 0) * 6,
+                   (0, -1, 0) * 6, ]
+        normals = np.array(normals, dtype='f4').reshape(36, 3)
+        
+        vertex_data = np.hstack([normals, vertex_data])
+        vertex_data = np.hstack([tex_coord_data, vertex_data])
 
         return vertex_data
     

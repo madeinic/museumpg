@@ -3,6 +3,7 @@ import moderngl as mgl
 import sys 
 from model import *
 from camera import Camera
+from light import Light
 
 class GraphicsEngine:
     def __init__(self, win_size=(1600, 900)):
@@ -39,13 +40,18 @@ class GraphicsEngine:
         #para que el movimiento de la camara sea independiente del frame rate
         self.delta_time = 0
         
-        #instanciación de una camara
+        # LUZ, CAMARA, ACCIÓN!
+        
+        # Instanciacion de un objeto luz
+        self.light = Light()
+        
+        # Instanciación de una camara
         self.camera = Camera(self)
         
-        #creacion de la escena (elementos en pantalla)
+        # Creacion de la escena (elementos en pantalla)
         self.scene = Cubo(self)
 
-    #funcion que detecta eventos y actua en consecuencia (como el presionado de teclas)
+    # Funcion que detecta eventos y actua en consecuencia (como el presionado de teclas)
     def check_events(self):
         for event in pg.event.get():
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
