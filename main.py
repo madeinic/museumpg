@@ -16,9 +16,18 @@ class GraphicsEngine:
         pg.display.gl_set_attribute(pg.GL_CONTEXT_PROFILE_MASK, pg.GL_CONTEXT_PROFILE_CORE)
         # crear contexto para opengl
         pg.display.set_mode(self.WIN_SIZE, flags=pg.OPENGL | pg.DOUBLEBUF)
+        
         #configurar puntero del mouse para esconderlo y no limitar movimiento
         pg.event.set_grab(True)
         pg.mouse.set_visible(False)
+        
+        #nombre de la ventana
+        pg.display.set_caption('Museo de animales (preparación del entorno)')
+        
+        #quitar icono por defecto y personalizarlo
+        icono = pg.image.load('./textures/peligro.png')
+        pg.display.set_icon(icono)
+        
         # detectar el contexto opengl
         self.ctx = mgl.create_context()
         #Activa Depth test para que se muestren las caras de manera correcta y cull face para que no se rendericen las caras interiores
