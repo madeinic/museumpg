@@ -1,2 +1,2 @@
 # museumpg
-Se han trabajado en la creacion de objetos rfcrfcS
+Se han trabajado en la creacion de objetos
