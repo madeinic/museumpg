@@ -14,6 +14,7 @@ class VBO:
         self.vbos['mono'] = MonoVBO(ctx)
         self.vbos['gato'] = GatoVBO(ctx)
         self.vbos['perro'] = PerroVBO(ctx)
+       
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]

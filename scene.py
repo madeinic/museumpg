@@ -19,6 +19,7 @@ class Scene:
             for x in range(-n, n, s):
                     for z in range(-n, n, s):
                             add(Cubo(app, pos=(x, -s, z)))
+            
             add(Mono(app, pos=(0, -1, -10)))   
             add(Gato(app, pos=(-10, -1, -10)))
             add(Perro(app, pos=(10, -1, -10)))  

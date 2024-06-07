@@ -112,3 +112,4 @@ class Perro(ExtendedBaseModel):
                  pos = (0, 0, 0), rot=(-90, 0, 0), scale = (0.07, 0.07, 0.07)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
+

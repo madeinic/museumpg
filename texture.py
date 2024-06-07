@@ -10,10 +10,11 @@ class Texture:
         self.textures[0] = self.get_texture(path='textures/peligro.png')
         self.textures[1] = self.get_texture(path='textures/cesped.jpeg')
         # Textura de la skybox
-        self.textures['skybox'] = self.get_texture_cube(dir_path='textures/skyboxTest/', ext='png')
+        self.textures['skybox'] = self.get_texture_cube(dir_path='textures/skybox/', ext='png')
         self.textures['mono'] = self.get_texture(path='objects/monkey/12958_Spider_Monkey_diff.jpg')
         self.textures['gato'] = self.get_texture(path='objects/cat/cat_diffuse.jpg') 
         self.textures['perro'] = self.get_texture(path='objects/dog/Australian_Cattle_Dog_dif.jpg')  
+
     
     def get_texture_cube(self, dir_path, ext='png'):
         faces = ['right', 'left', 'top', 'bottom'] +  ['front', 'back'][::-1]

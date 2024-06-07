@@ -56,6 +56,11 @@ class GraphicsEngine:
         # Creacion de la escena (elementos en pantalla)
         self.scene = Scene(self)
 
+        pg.mixer.init()
+        pg.mixer.music.load('sound/polka.mp3')  # Ruta a tu archivo de música
+        pg.mixer.music.set_volume(0.5)  # Ajusta el volumen de la música
+        pg.mixer.music.play(-1)  # Reproducir la música en bucle
+
     # Funcion que detecta eventos y actua en consecuencia (como el presionado de teclas)
     def check_events(self):
         for event in pg.event.get():

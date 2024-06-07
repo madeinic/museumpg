@@ -58,6 +58,7 @@ class Camera:
         if keys[pg.K_LSHIFT] or keys[pg.K_RSHIFT]:
             velocity = BOOSTED_SPEED * self.app.delta_time
         
+        
         if keys[pg.K_w]:
             self.position += self.forward * velocity
         if keys[pg.K_s]:
@@ -70,6 +71,7 @@ class Camera:
             self.position += self.up * velocity
         if keys[pg.K_e]:
             self.position -= self.up * velocity
+        
         
        # self.position.y = max(self.min_height, min(self.max_height, self.position.y))
 
