@@ -25,14 +25,28 @@ class VAO:
             program=self.program.programs['default'],
             vbo = self.vbo.vbos['cube'])
         
+        # shadow cubo vao
+        self.vaos['shadow_cube'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['cube'])
+        
         # mono vao
         self.vaos['mono'] = self.get_vao(
             program=self.program.programs['default'],
             vbo = self.vbo.vbos['mono'])
         
+        #shadow mono vao
+        self.vaos['shadow_mono'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['mono'])
         # gato vao
         self.vaos['gato'] = self.get_vao(
             program=self.program.programs['default'],
+            vbo = self.vbo.vbos['gato'])
+        
+        # shadow gato vao
+        self.vaos['shadow_gato'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['gato'])
         
         # perro vao
@@ -40,6 +54,10 @@ class VAO:
             program=self.program.programs['default'],
             vbo = self.vbo.vbos['perro'])
         
+        # shadow perro vao
+        self.vaos['shadow_perro'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['perro'])
 
         
     #obtener vaos

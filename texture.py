@@ -4,8 +4,9 @@ import glm
 
 
 class Texture:
-    def __init__(self, ctx):
-        self.ctx = ctx
+    def __init__(self, app):
+        self.app = app
+        self.ctx = app.ctx
         self.textures = {}
         self.textures[0] = self.get_texture(path='textures/peligro.png')
         self.textures[1] = self.get_texture(path='textures/cesped.jpeg')
@@ -14,7 +15,11 @@ class Texture:
         self.textures['mono'] = self.get_texture(path='objects/monkey/12958_Spider_Monkey_diff.jpg')
         self.textures['gato'] = self.get_texture(path='objects/cat/cat_diffuse.jpg') 
         self.textures['perro'] = self.get_texture(path='objects/dog/Australian_Cattle_Dog_dif.jpg')  
+        self.textures['depth_texture'] = self.get_depth_texture()
 
+    def get_depth_texture(self):
+        depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)
+        return depth_texture
     
     def get_texture_cube(self, dir_path, ext='png'):
         faces = ['right', 'left', 'top', 'bottom'] +  ['front', 'back'][::-1]

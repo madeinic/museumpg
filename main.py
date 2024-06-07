@@ -6,6 +6,7 @@ from camera import Camera
 from light import Light
 from mesh import Mesh
 from scene import Scene
+from scene_renderer import SceneRenderer as RenderizadorEscena
 
 class GraphicsEngine:
     def __init__(self, win_size=(1600, 900)):
@@ -55,6 +56,9 @@ class GraphicsEngine:
         
         # Creacion de la escena (elementos en pantalla)
         self.scene = Scene(self)
+
+        #Renderizacion de la escena
+        self.scene_renderer = RenderizadorEscena(self)
 
         pg.mixer.init()
         pg.mixer.music.load('sound/polka.mp3')  # Ruta a tu archivo de música
