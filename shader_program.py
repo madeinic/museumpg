@@ -6,6 +6,7 @@ class ShaderProgram:
         self.programs = {}
         self.programs['default'] = self.get_program('default')
         self.programs['skybox'] = self.get_program('skybox')
+        self.programs['advanced_skybox'] = self.get_program('advanced_skybox')
 
         #Abrir los archivos de shader
     def get_program(self, shader_program_name):

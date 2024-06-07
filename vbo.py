@@ -11,6 +11,7 @@ class VBO:
         #acceder a vbo del onjeto a traves de un diccionario
         self.vbos['cube'] = CubeVBO(ctx)
         self.vbos['skybox'] = SkyBoxVBO(ctx)
+        self.vbos['advanced_skybox'] = AdvancedSkyBoxVBO(ctx)
         self.vbos['mono'] = MonoVBO(ctx)
         self.vbos['gato'] = GatoVBO(ctx)
         self.vbos['perro'] = PerroVBO(ctx)
@@ -88,10 +89,9 @@ class CubeVBO(BaseVBO):
 class SkyBoxVBO(BaseVBO):
     def __init__(self, ctx):
         super().__init__(ctx)
-        #Formato de atributos de objeto
         self.format = '3f'
         self.attribs = ['in_position']
-    #usar la libreria numpy para recopilar los vertices y caras del objeto en un solo arreglo
+
     @staticmethod
     def get_data(vertices, indices):
         data = [vertices[ind] for triangle in indices for ind in triangle]
@@ -109,9 +109,20 @@ class SkyBoxVBO(BaseVBO):
                    (0, 6, 1), (0, 5, 6)]
         vertex_data = self.get_data(vertices, indices)
         vertex_data = np.flip(vertex_data, 1).copy(order='C')
-
         return vertex_data
 
+class AdvancedSkyBoxVBO(BaseVBO):
+    def __init__(self, ctx):
+        super().__init__(ctx)
+        self.format = '3f'
+        self.attribs = ['in_position']
+
+    def get_vertex_data(self):
+        # in clip space
+        z = 0.9999
+        vertices = [(-1, -1, z), (3, -1, z), (-1, 3, z)]
+        vertex_data = np.array(vertices, dtype='f4')
+        return vertex_data
 
 class MonoVBO(BaseVBO):
     def __init__(self, app):

@@ -14,6 +14,11 @@ class VAO:
         self.vaos['skybox'] = self.get_vao(
             program=self.program.programs['skybox'],
             vbo = self.vbo.vbos['skybox'])
+        
+        # advanced_skybox vao
+        self.vaos['advanced_skybox'] = self.get_vao(
+            program=self.program.programs['advanced_skybox'],
+            vbo=self.vbo.vbos['advanced_skybox'])
 
         # cubo vao
         self.vaos['cube'] = self.get_vao(
