@@ -9,7 +9,7 @@ BOOSTED_SPEED = 0.01  # Velocidad aumentada al presionar Shift
 SENSITIVITY = 0.04
 
 class Camera:
-    def __init__(self, app, position=(0, 0, 4), yaw=-90, pitch=0):
+    def __init__(self, app, position=(0, 0, 4), yaw=-90, pitch=0, min_height=0.1, max_height=4.0):
         self.app = app
         self.aspect_ratio = app.WIN_SIZE[0] / app.WIN_SIZE[1]
         self.position = glm.vec3(position)
@@ -18,8 +18,8 @@ class Camera:
         self.forward = glm.vec3(0, 0, -1)
         self.yaw = yaw
         self.pitch = pitch
-      #  self.min_height = 0.1
-      # self.max_height = 0.1 
+        self.min_height = min_height
+        self.max_height = max_height
         # view matrix
         self.m_view = self.get_view_matrix()
         # projection matrix
@@ -41,24 +41,21 @@ class Camera:
         self.forward = glm.normalize(self.forward)
         self.right = glm.normalize(glm.cross(self.forward, glm.vec3(0, 1, 0)))
         self.up = glm.normalize(glm.cross(self.right, self.forward))
-    
-    
+
     def update(self):
         self.move()
         self.rotate()
         self.update_camera_vectors()
         self.m_view = self.get_view_matrix()
 
-    #Configuracion de teclas para mover la camara
     def move(self):
         velocity = BASE_SPEED * self.app.delta_time
         keys = pg.key.get_pressed()
-        
+
         # Ajustar velocidad si se presiona Shift
         if keys[pg.K_LSHIFT] or keys[pg.K_RSHIFT]:
             velocity = BOOSTED_SPEED * self.app.delta_time
-        
-        
+
         if keys[pg.K_w]:
             self.position += self.forward * velocity
         if keys[pg.K_s]:
@@ -71,9 +68,9 @@ class Camera:
             self.position += self.up * velocity
         if keys[pg.K_e]:
             self.position -= self.up * velocity
-        
-        
-       # self.position.y = max(self.min_height, min(self.max_height, self.position.y))
+
+        # Limitar la altura de la cámara
+        self.position.y = max(self.min_height, min(self.max_height, self.position.y))
 
     def get_view_matrix(self):
         return glm.lookAt(self.position, self.position + self.forward, self.up)
