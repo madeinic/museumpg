@@ -9,7 +9,7 @@ BOOSTED_SPEED = 0.01  # Velocidad aumentada al presionar Shift
 SENSITIVITY = 0.04
 
 class Camera:
-    def __init__(self, app, position=(0, 0, 4), yaw=-90, pitch=0, min_height=0.1, max_height=4.0):
+    def __init__(self, app, position=(0, 4, 4), yaw=-90, pitch=0, min_height=3.1, max_height=3.1):
         self.app = app
         self.aspect_ratio = app.WIN_SIZE[0] / app.WIN_SIZE[1]
         self.position = glm.vec3(position)
