@@ -26,6 +26,7 @@ class Scene:
         add(Tapir(app, vao_name='tapir', tex_id='tapir', pos=(15, -1, -10)))
         add(Rana(app, vao_name='rana', tex_id='rana', pos=(5, -1, -10)))
         add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(15, -1, -5)))
+        add(Anaconda(app, vao_name='anaconda', tex_id='anaconda', pos=(-5, -1, -10)))
      
     def render(self):
         for obj in self.objects:

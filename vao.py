@@ -88,6 +88,16 @@ class VAO:
         self.vaos['shadow_tucan'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['tucan'])
+        
+        # anaconda vao
+        self.vaos['anaconda'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['anaconda'])
+        
+        # shadow anaconda vao
+        self.vaos['shadow_anaconda'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['anaconda'])
 
     #obtener vaos
     def get_vao(self, program, vbo):
