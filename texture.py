@@ -17,6 +17,8 @@ class Texture:
         self.textures['perro'] = self.get_texture(path='objects/dog/Australian_Cattle_Dog_dif.jpg')  
         self.textures['depth_texture'] = self.get_depth_texture()
         self.textures['tapir'] = self.get_texture(path='objects/tapir/tapir_diffuse.jpg')
+        self.textures['rana'] = self.get_texture(path='objects/Frog/frog_diff.jpg')
+        self.textures['tucan'] = self.get_texture(path='objects/Tucan/12260_Bird_Toucan_Diffuse.jpg')
 
     def get_depth_texture(self):
         depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)

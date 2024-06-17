@@ -16,7 +16,8 @@ class VBO:
         self.vbos['gato'] = GatoVBO(ctx)
         self.vbos['perro'] = PerroVBO(ctx)
         self.vbos['tapir'] = TapirVBO(ctx)
-       
+        self.vbos['rana'] = RanaVBO(ctx)
+        self.vbos['tucan'] = TucanVBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -179,3 +180,28 @@ class TapirVBO(BaseVBO):
         vertex_data = np.array(vertex_data, dtype='f4')
         return vertex_data
     
+class RanaVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront('objects/Frog/12270_Frog_v1_L3.obj', cache=True, parse=True)
+        obj = objs.materials.popitem()[1]
+        vertex_data = obj.vertices
+        vertex_data = np.array(vertex_data, dtype='f4')
+        return vertex_data
+    
+class TucanVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront('objects/Tucan/12260_Bird_Toucan_v3_l2.obj', cache=True, parse=True)
+        obj = objs.materials.popitem()[1]
+        vertex_data = obj.vertices
+        vertex_data = np.array(vertex_data, dtype='f4')
+        return vertex_data

@@ -68,6 +68,26 @@ class VAO:
         self.vaos['shadow_tapir'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['tapir'])
+        
+        # rana vao
+        self.vaos['rana'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['rana'])
+        
+        # shadow rana vao
+        self.vaos['shadow_rana'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['rana'])
+
+        # tucan vao
+        self.vaos['tucan'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['tucan'])
+        
+        # shadow tucan vao
+        self.vaos['shadow_tucan'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['tucan'])
 
     #obtener vaos
     def get_vao(self, program, vbo):
