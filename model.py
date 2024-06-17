@@ -105,6 +105,21 @@ class Anaconda(ExtendedBaseModel):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
+class Loris(ExtendedBaseModel):
+    def __init__(self, app, vao_name='loris', tex_id='loris', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Pato(ExtendedBaseModel):
+    def __init__(self, app, vao_name='pato', tex_id='pato', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class SeaDragon(ExtendedBaseModel):
+    def __init__(self, app, vao_name='seadragon', tex_id='seadragon', pos=(0,0,0), rot=(-90,0,0), scale=(0.1,0.1,0.1)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
 class AdvancedSkyBox(BaseModel):
     def __init__(self, app, vao_name='advanced_skybox', tex_id='skybox', pos=(0,0,0), rot=(0,0,0), scale=(1,1,1)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)

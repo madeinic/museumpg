@@ -27,7 +27,11 @@ class Scene:
         add(Rana(app, vao_name='rana', tex_id='rana', pos=(5, -1, -10)))
         add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(15, -1, -5)))
         add(Anaconda(app, vao_name='anaconda', tex_id='anaconda', pos=(-5, -1, -10)))
-     
+        add(Loris(app, vao_name='loris', tex_id='loris', pos=(15, -1, 0)))
+        add(Pato(app, vao_name='pato', tex_id='pato', pos=(9, -1, -5)))
+        add(SeaDragon(app, vao_name='seadragon', tex_id='seadragon', pos=(13, -1, -5)))
+
+
     def render(self):
         for obj in self.objects:
             obj.render()

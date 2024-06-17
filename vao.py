@@ -98,6 +98,36 @@ class VAO:
         self.vaos['shadow_anaconda'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['anaconda'])
+        
+        # loris vao
+        self.vaos['loris'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['loris'])
+        
+        # shadow loris vao
+        self.vaos['shadow_loris'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['loris'])
+
+        # pato mandarin vao
+        self.vaos['pato'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['pato'])
+        
+        # shadow pato mandarin vao
+        self.vaos['shadow_pato'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['pato'])
+
+        # dragon de mar mandarin vao
+        self.vaos['seadragon'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['seadragon'])
+        
+        # shadow pato mandarin vao
+        self.vaos['shadow_seadragon'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['seadragon'])
 
     #obtener vaos
     def get_vao(self, program, vbo):

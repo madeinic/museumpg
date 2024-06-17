@@ -19,6 +19,9 @@ class VBO:
         self.vbos['rana'] = RanaVBO(ctx)
         self.vbos['tucan'] = TucanVBO(ctx)
         self.vbos['anaconda'] = AnacondaVBO(ctx)
+        self.vbos['loris'] = LorisVBO(ctx)
+        self.vbos['pato'] = PatoVBO(ctx)
+        self.vbos['seadragon'] = SeaDragonVBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -215,6 +218,45 @@ class AnacondaVBO(BaseVBO):
         
     def get_vertex_data(self):
         objs = pywavefront.Wavefront('objects/anaconda/13571_Anaconda_v1_L2.obj', cache=True, parse=True)
+        obj = objs.materials.popitem()[1]
+        vertex_data = obj.vertices
+        vertex_data = np.array(vertex_data, dtype='f4')
+        return vertex_data
+
+class LorisVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront('objects/loris/13569_Slender_Loris_v1_L3.obj', cache=True, parse=True)
+        obj = objs.materials.popitem()[1]
+        vertex_data = obj.vertices
+        vertex_data = np.array(vertex_data, dtype='f4')
+        return vertex_data
+    
+class PatoVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront('objects/MandarinDuck/12253_Mandarin_Duck_v1_l3.obj', cache=True, parse=True)
+        obj = objs.materials.popitem()[1]
+        vertex_data = obj.vertices
+        vertex_data = np.array(vertex_data, dtype='f4')
+        return vertex_data
+    
+class SeaDragonVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        objs = pywavefront.Wavefront('objects/seadragon/12267_seadragon_v1_L2.obj', cache=True, parse=True)
         obj = objs.materials.popitem()[1]
         vertex_data = obj.vertices
         vertex_data = np.array(vertex_data, dtype='f4')
