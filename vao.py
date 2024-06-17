@@ -58,8 +58,17 @@ class VAO:
         self.vaos['shadow_perro'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['perro'])
-
         
+        # tapir vao
+        self.vaos['tapir'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['tapir'])
+
+        # shadow tapir vao
+        self.vaos['shadow_tapir'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['tapir'])
+
     #obtener vaos
     def get_vao(self, program, vbo):
         vao = self.ctx.vertex_array(program, [(vbo.vbo, vbo.format, *vbo.attribs)], skip_errors=True)

@@ -85,6 +85,11 @@ class Perro(ExtendedBaseModel):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
+class Tapir(ExtendedBaseModel):
+    def __init__(self, app, vao_name='tapir', tex_id='tapir', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
 class AdvancedSkyBox(BaseModel):
     def __init__(self, app, vao_name='advanced_skybox', tex_id='skybox', pos=(0,0,0), rot=(0,0,0), scale=(1,1,1)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
