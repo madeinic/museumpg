@@ -68,9 +68,11 @@ class Camera:
             self.position += self.up * velocity
         if keys[pg.K_e]:
             self.position -= self.up * velocity
+         # Registro de depuración
+        print(f'Camera Position: {self.position}')
 
         # Limitar la altura de la cámara
-        self.position.y = max(self.min_height, min(self.max_height, self.position.y))
+        #self.position.y = max(self.min_height, min(self.max_height, self.position.y))
 
     def get_view_matrix(self):
         return glm.lookAt(self.position, self.position + self.forward, self.up)

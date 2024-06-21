@@ -3,6 +3,7 @@ import moderngl as mgl
 import sys 
 from model import *
 from camera import Camera
+from sound_area import *
 from light import Light
 from mesh import Mesh
 from scene import Scene
@@ -61,7 +62,7 @@ class GraphicsEngine:
         self.scene_renderer = RenderizadorEscena(self)
 
         pg.mixer.init()
-        pg.mixer.music.load('sound/polka.mp3')  # Ruta a tu archivo de música
+        pg.mixer.music.load('sound/polka.mp3')  
         pg.mixer.music.set_volume(0.5)  # Ajusta el volumen de la música
         pg.mixer.music.play(-1)  # Reproducir la música en bucle
 
@@ -91,6 +92,7 @@ class GraphicsEngine:
             self.check_events()
             self.camera.update()
             self.render()
+            self.scene.update_sounds()
             #establecer framerate (fps)
             self.delta_time = self.clock.tick(60)
 
