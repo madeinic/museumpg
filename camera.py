@@ -9,7 +9,7 @@ BOOSTED_SPEED = 0.01  # Velocidad aumentada al presionar Shift
 SENSITIVITY = 0.04
 
 class Camera:
-    def __init__(self, app, position=(0, 4, 4), yaw=-90, pitch=0, min_height=3.1, max_height=3.1):
+    def __init__(self, app, position=(0, 1, 0), yaw=-90, pitch=0, min_height=3.1, max_height=3.1):
         self.app = app
         self.aspect_ratio = app.WIN_SIZE[0] / app.WIN_SIZE[1]
         self.position = glm.vec3(position)
@@ -18,6 +18,7 @@ class Camera:
         self.forward = glm.vec3(0, 0, -1)
         self.yaw = yaw
         self.pitch = pitch
+        #obtener altura maxima y minima
         self.min_height = min_height
         self.max_height = max_height
         # view matrix
@@ -55,24 +56,39 @@ class Camera:
         # Ajustar velocidad si se presiona Shift
         if keys[pg.K_LSHIFT] or keys[pg.K_RSHIFT]:
             velocity = BOOSTED_SPEED * self.app.delta_time
+        
+        #variable para obtener la posicion que se usara para detectar colisiones
+        potential_position = glm.vec3(self.position)
 
         if keys[pg.K_w]:
-            self.position += self.forward * velocity
+            potential_position += self.forward * velocity
         if keys[pg.K_s]:
-            self.position -= self.forward * velocity
+            potential_position -= self.forward * velocity
         if keys[pg.K_a]:
-            self.position -= self.right * velocity
+            potential_position -= self.right * velocity
         if keys[pg.K_d]:
-            self.position += self.right * velocity
+            potential_position += self.right * velocity
         if keys[pg.K_q]:
-            self.position += self.up * velocity
+            potential_position += self.up * velocity
         if keys[pg.K_e]:
-            self.position -= self.up * velocity
-         # Registro de depuración
-        print(f'Camera Position: {self.position}')
+            potential_position -= self.up * velocity
+
+        
+        if not self.detect_collision(potential_position):
+            self.position = potential_position
 
         # Limitar la altura de la cámara
         #self.position.y = max(self.min_height, min(self.max_height, self.position.y))
+
+    #funciona para verificar si la camara esta tocando una caja delimitadora
+    def detect_collision(self, new_position):
+        for obj in self.app.scene.objects:
+            min_corner, max_corner = obj.bounding_box
+            if (min_corner.x <= new_position.x <= max_corner.x and
+                min_corner.y <= new_position.y <= max_corner.y and
+                min_corner.z <= new_position.z <= max_corner.z):
+                return True
+        return False
 
     def get_view_matrix(self):
         return glm.lookAt(self.position, self.position + self.forward, self.up)

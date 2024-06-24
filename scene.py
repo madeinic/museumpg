@@ -14,8 +14,9 @@ class Scene:
     def add_object(self, obj):
         self.objects.append(obj)
     
-    def add_sound_area(self, position, radius, sound_file):
-        sound_area = SoundArea(position, radius, sound_file)
+    #Añadir area de sonido
+    def add_sound_area(self, position, radius, sound_file, key):
+        sound_area = SoundArea(position, radius, sound_file, key)
         sound_area.load_sound()
         self.sound_areas.append(sound_area)
         print(f'Sound Area Added: Position={position}, Radius={radius}, Sound File={sound_file}')  # Registro de depuración
@@ -25,9 +26,9 @@ class Scene:
         app = self.app
         add = self.add_object
 
-        #areas de sonido
+        #Areas de sonido
         
-        self.add_sound_area((0, -1, -10), 10, 'sound/BOOM.mp3')
+        self.add_sound_area((0, -1, -10), 10, 'sound/woof.mp3',pg.K_f)
         
             
         n, s = 30, 2
@@ -52,16 +53,8 @@ class Scene:
             obj.render()
         self.skybox.render()
     
-    def update_sounds(self):
+    def update_sounds(self, key_pressed):
         cam_pos = self.app.camera.position
-        print(f'Camera Position in Scene: {cam_pos}')
 
         for sound_area in self.sound_areas:
-            distance = glm.distance(cam_pos, sound_area.position)
-            if distance < sound_area.radius:
-                volume = 1 - (distance / sound_area.radius)
-                sound_area.set_volume(volume)
-                sound_area.play()
-            else:
-                sound_area.set_volume(0)
-                sound_area.stop()
+            sound_area.check_and_play(cam_pos, key_pressed)

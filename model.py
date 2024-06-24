@@ -11,13 +11,21 @@ class BaseModel:
         self.scale = scale
         self.m_model = self.get_model_matrix()
         self.tex_id = tex_id
-        self.vao_name = vao_name  # <-- Ensure this line is here
+        self.vao_name = vao_name  
         self.vao = app.mesh.vao.vaos[vao_name]
         self.program = self.vao.program
         self.camera = self.app.camera
+        #delimitador
+        self.bounding_box = self.calculate_bounding_box()
     
-    def update(self): ...
-
+    #funcion para calcular delimtacion
+    def calculate_bounding_box(self):
+        size = 1.0  # Tamaño base
+        min_corner = self.pos - glm.vec3(size * 1.5)
+        max_corner = self.pos + glm.vec3(size * 1.5)
+        return (min_corner, max_corner)
+    
+   
     def get_model_matrix(self):
         m_model = glm.mat4()
         m_model = glm.translate(m_model, self.pos)

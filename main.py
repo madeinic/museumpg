@@ -1,5 +1,6 @@
 import pygame as pg
 import moderngl as mgl
+import time
 import sys 
 from model import *
 from camera import Camera
@@ -61,10 +62,14 @@ class GraphicsEngine:
         #Renderizacion de la escena
         self.scene_renderer = RenderizadorEscena(self)
 
+        #Iniciar musica de fondo
         pg.mixer.init()
         pg.mixer.music.load('sound/polka.mp3')  
         pg.mixer.music.set_volume(0.5)  # Ajusta el volumen de la música
         pg.mixer.music.play(-1)  # Reproducir la música en bucle
+
+        # Variable para almacenar el estado de la tecla
+        self.key_pressed = {pg.K_f: False}
 
     # Funcion que detecta eventos y actua en consecuencia (como el presionado de teclas)
     def check_events(self):
@@ -73,6 +78,12 @@ class GraphicsEngine:
                 self.mesh.destroy()
                 pg.quit()
                 sys.exit()
+            elif event.type == pg.KEYDOWN:
+                if event.key in self.key_pressed:
+                    self.key_pressed[event.key] = True
+            elif event.type == pg.KEYUP:
+                if event.key in self.key_pressed:
+                    self.key_pressed[event.key] = False
 
     def render(self):
         # limpiar framebuffer
@@ -81,7 +92,6 @@ class GraphicsEngine:
         self.scene.render()
         # intercambiar buffers
         pg.display.flip()
-        
         
     def get_time(self):
         self.time = pg.time.get_ticks() * 0.001
@@ -92,10 +102,10 @@ class GraphicsEngine:
             self.check_events()
             self.camera.update()
             self.render()
-            self.scene.update_sounds()
+            #Llama al metodo update_sounds con el estado de la tecla
+            self.scene.update_sounds(self.key_pressed)
             #establecer framerate (fps)
             self.delta_time = self.clock.tick(60)
-
 
 if __name__ == '__main__':
     app = GraphicsEngine()
