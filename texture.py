@@ -9,13 +9,13 @@ class Texture:
         self.ctx = app.ctx
         self.textures = {}
         self.textures[0] = self.get_texture(path='textures/peligro.png')
-        self.textures[1] = self.get_texture(path='textures/piso.jpg')
+        self.textures[1] = self.get_texture(path='textures/pisoo.png')
         # Textura de la skybox
         self.textures['skybox'] = self.get_texture_cube(dir_path='textures/skybox/', ext='png')
         #texturas de modelos
         self.textures['mono'] = self.get_texture(path='objects/monkey/12958_Spider_Monkey_diff.jpg')
-        self.textures['gato'] = self.get_texture(path='objects/cat/cat_diffuse.jpg') 
-        self.textures['perro'] = self.get_texture(path='objects/dog/Australian_Cattle_Dog_dif.jpg')  
+        #self.textures['gato'] = self.get_texture(path='objects/cat/cat_diffuse.jpg') 
+        #self.textures['perro'] = self.get_texture(path='objects/dog/Australian_Cattle_Dog_dif.jpg')  
         self.textures['depth_texture'] = self.get_depth_texture()
         self.textures['tapir'] = self.get_texture(path='objects/tapir/tapir_diffuse.jpg')
         self.textures['rana'] = self.get_texture(path='objects/Frog/frog_diff.jpg')

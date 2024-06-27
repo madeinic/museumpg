@@ -83,15 +83,15 @@ class Mono(ExtendedBaseModel):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
-class Gato(ExtendedBaseModel):
-    def __init__(self, app, vao_name='gato', tex_id='gato', pos=(0,0,0), rot=(-90,0,0), scale=(0.025,0.025,0.025)):
-        super().__init__(app, vao_name, tex_id, pos, rot, scale)
-        self.on_init()
+# class Gato(ExtendedBaseModel):
+#     def __init__(self, app, vao_name='gato', tex_id='gato', pos=(0,0,0), rot=(-90,0,0), scale=(0.025,0.025,0.025)):
+#         super().__init__(app, vao_name, tex_id, pos, rot, scale)
+#         self.on_init()
 
-class Perro(ExtendedBaseModel):
-    def __init__(self, app, vao_name='perro', tex_id='perro', pos=(0,0,0), rot=(-90,0,0), scale=(0.07,0.07,0.07)):
-        super().__init__(app, vao_name, tex_id, pos, rot, scale)
-        self.on_init()
+# class Perro(ExtendedBaseModel):
+#     def __init__(self, app, vao_name='perro', tex_id='perro', pos=(0,0,0), rot=(-90,0,0), scale=(0.07,0.07,0.07)):
+#         super().__init__(app, vao_name, tex_id, pos, rot, scale)
+#         self.on_init()
 
 class Tapir(ExtendedBaseModel):
     def __init__(self, app, vao_name='tapir', tex_id='tapir', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
