@@ -9,7 +9,9 @@ class Texture:
         self.ctx = app.ctx
         self.textures = {}
         self.textures[0] = self.get_texture(path='textures/peligro.png')
-        self.textures[1] = self.get_texture(path='textures/pisoo.png')
+        self.textures[1] = self.get_texture(path='textures/marmol.jpg')
+        self.textures[2] = self.get_texture(path='textures/cesped.jpeg')
+        self.textures[3] = self.get_texture(path='textures/floor.png')
         # Textura de la skybox
         self.textures['skybox'] = self.get_texture_cube(dir_path='textures/skybox/', ext='png')
         #texturas de modelos

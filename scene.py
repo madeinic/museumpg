@@ -21,20 +21,67 @@ class Scene:
         self.sound_areas.append(sound_area)
         print(f'Sound Area Added: Position={position}, Radius={radius}, Sound File={sound_file}')  # Registro de depuración
         
+    # (dimension = 2; entonces sera una losa de dimension 2x2)
+    def generarLosa(self, dimensiones, posicion_centro, textura):
+        app = self.app
+        add = self.add_object
+        n, s = dimensiones, 2
+        cx, cy, cz = posicion_centro
+        for x in range(cx - n, cx + n, s):
+            for z in range(cz - n, cz + n, s):
+                add(Cubo(app, vao_name='cube', tex_id=textura, pos=(x, cy, z)))
+    
+    
+    def generarPared(self, dimension, posicion, orientacion, textura):
+        app = self.app
+        add = self.add_object
+        n, s = dimension, 2
+        cx, cy, cz = posicion
 
+        if orientacion == 'frontal':
+            for x in range(cx, cx + n * s, s):
+                for y in range(cy, cy + n * s, s):
+                    add(Cubo(app, vao_name='cube', tex_id=textura, pos=(x, y, cz)))
+                    
+        elif orientacion == 'lateral':
+            for z in range(cz, cz + n * s, s):
+                for y in range(cy, cy + n * s, s):
+                    add(Cubo(app, vao_name='cube', tex_id=textura, pos=(cx, y, z)))
+
+    
+        
     def load(self):
         app = self.app
         add = self.add_object
-
+        generarLosa = self.generarLosa
+        generarPared = self.generarPared
         #Areas de sonido
         
         self.add_sound_area((0, -1, -10), 10, 'sound/woof.mp3',pg.K_f)
         
+        # Generar el suelo exterior
+        generarLosa(30, (0, -2, 0),2)
+        generarLosa(30,(0,-2, -60),3)
+        # Generar las paredes de la estructura de exhibición
+        
+        # Paredes frontales
+        #mas cercanas
+        generarPared(15, (-34, 0, -30), 'frontal', 1)
+        generarPared(15, (4, 0, -30), 'frontal', 1)
+        #mas alejadas
+        generarPared(15, (-30, 0, -90), 'frontal', 1)
+        generarPared(15, (0, 0, -90), 'frontal', 1)
+
+        # Paredes laterales
+        generarPared(15, (-30, 0, -60), 'lateral', 1)
+        generarPared(15, (-30, 0, -90), 'lateral', 1)
+        generarPared(15, (30, 0, -90), 'lateral', 1)
+        generarPared(15, (30, 0, -60), 'lateral', 1)
             
-        n, s = 30, 2
+        '''n, s = 30, 2
         for x in range(-n, n, s):
             for z in range(-n, n, s):
-                add(Cubo(app, vao_name='cube', tex_id=1, pos=(x, -s, z)))
+                add(Cubo(app, vao_name='cube', tex_id=2, pos=(x, -s, z)))'''
             
         add(Mono(app, vao_name='mono', tex_id='mono', pos=(0, -1, -10)))   
         #add(Gato(app, vao_name='gato', tex_id='gato', pos=(-10, -1, -10)))

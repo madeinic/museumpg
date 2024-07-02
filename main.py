@@ -28,7 +28,7 @@ class GraphicsEngine:
         pg.mouse.set_visible(False)
         
         #nombre de la ventana
-        pg.display.set_caption('Museo de animales (preparación del entorno)')
+        pg.display.set_caption('Museo de animales')
         
         #quitar icono por defecto y personalizarlo
         icono = pg.image.load('./textures/peligro.png')

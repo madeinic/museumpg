@@ -43,6 +43,12 @@ class BaseVBO:
 
     def destroy(self):
         self.vbo.release()
+        
+    def load_wavefront(self, path):
+        objs = pywavefront.Wavefront(path, cache=True, parse=True)
+        obj = objs.materials.popitem()[1]
+        vertex_data = obj.vertices
+        return np.array(vertex_data, dtype='f4')
 
         
 class CubeVBO(BaseVBO):
@@ -137,11 +143,7 @@ class MonoVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/monkey/12958_Spider_Monkey_v1_l2.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/monkey/12958_Spider_Monkey_v1_l2.obj')
   
     
 class GatoVBO(BaseVBO):
@@ -151,11 +153,7 @@ class GatoVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/cat/12221_Cat_v1_l3.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/cat/12221_Cat_v1_l3.obj')
     
 
 class PerroVBO(BaseVBO):
@@ -165,11 +163,7 @@ class PerroVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/dog/13463_Australian_Cattle_Dog_v3.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/dog/13463_Australian_Cattle_Dog_v3.obj')
     
 class TapirVBO(BaseVBO):
     def __init__(self, app):
@@ -178,12 +172,7 @@ class TapirVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/tapir/12277_Tapir_v1_L2.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
-    
+        return self.load_wavefront('objects/tapir/12277_Tapir_v1_L2.obj')
 class RanaVBO(BaseVBO):
     def __init__(self, app):
         super().__init__(app)
@@ -191,11 +180,7 @@ class RanaVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/Frog/12270_Frog_v1_L3.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/Frog/12270_Frog_v1_L3.obj')
     
 class TucanVBO(BaseVBO):
     def __init__(self, app):
@@ -204,12 +189,7 @@ class TucanVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/Tucan/12260_Bird_Toucan_v3_l2.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
-    
+        return self.load_wavefront('objects/Tucan/12260_Bird_Toucan_v3_l2.obj')
 class AnacondaVBO(BaseVBO):
     def __init__(self, app):
         super().__init__(app)
@@ -217,11 +197,7 @@ class AnacondaVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/anaconda/13571_Anaconda_v1_L2.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/anaconda/13571_Anaconda_v1_L2.obj')
 
 class LorisVBO(BaseVBO):
     def __init__(self, app):
@@ -230,11 +206,7 @@ class LorisVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/loris/13569_Slender_Loris_v1_L3.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/loris/13569_Slender_Loris_v1_L3.obj')
     
 class PatoVBO(BaseVBO):
     def __init__(self, app):
@@ -243,11 +215,7 @@ class PatoVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/MandarinDuck/12253_Mandarin_Duck_v1_l3.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/MandarinDuck/12253_Mandarin_Duck_v1_l3.obj')
     
 class SeaDragonVBO(BaseVBO):
     def __init__(self, app):
@@ -256,8 +224,4 @@ class SeaDragonVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        objs = pywavefront.Wavefront('objects/seadragon/12267_seadragon_v1_L2.obj', cache=True, parse=True)
-        obj = objs.materials.popitem()[1]
-        vertex_data = obj.vertices
-        vertex_data = np.array(vertex_data, dtype='f4')
-        return vertex_data
+        return self.load_wavefront('objects/seadragon/12267_seadragon_v1_L2.obj')
