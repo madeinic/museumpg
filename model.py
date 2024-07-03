@@ -94,7 +94,7 @@ class Mono(ExtendedBaseModel):
 #         self.on_init()
 
 class Tapir(ExtendedBaseModel):
-    def __init__(self, app, vao_name='tapir', tex_id='tapir', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
+    def __init__(self, app, vao_name='tapir', tex_id='tapir', pos=(0,0,0), rot=(-90,-90,180), scale=(0.05,0.05,0.05)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
