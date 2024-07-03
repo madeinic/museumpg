@@ -139,7 +139,7 @@ class SeaDragon(ExtendedBaseModel):
         self.on_init()
 
 class Dolphin(ExtendedBaseModel):
-    def __init__(self, app, vao_name='dolphin', tex_id='dolphin', pos=(0,0,0), rot=(-90,0,0), scale=(0.1,0.1,0.1)):
+    def __init__(self, app, vao_name='dolphin', tex_id='dolphin', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 

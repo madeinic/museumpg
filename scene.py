@@ -97,7 +97,7 @@ class Scene:
         add(SeaDragon(app, vao_name='seadragon', tex_id='seadragon', pos=(13, -1, -5)))
         add(Armadillo(app, vao_name='armadillo', tex_id='armadillo', pos=(10, -1, -5)))
         add(CartelFinal(app, vao_name='CartelFinal', tex_id='CartelFinal', pos=(12, -1, -5)))
-        add(Dolphin(app, vao_name='dolphin', tex_id='dolphin', pos=(10, -1, -70)))
+        add(Dolphin(app, vao_name='dolphin', tex_id='dolphin', pos=(22, -1, -70)))
 
 
     def render(self):
