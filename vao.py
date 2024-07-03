@@ -30,7 +30,16 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['cube'])
         
-        # mono vao
+        # armadillo vao
+        self.vaos['armadillo'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['armadillo'])
+        
+         #shadow armadillo vao
+        self.vaos['shadow_armadillo'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['armadillo'])
+         # mono vao
         self.vaos['mono'] = self.get_vao(
             program=self.program.programs['default'],
             vbo = self.vbo.vbos['mono'])
@@ -39,6 +48,7 @@ class VAO:
         self.vaos['shadow_mono'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['mono'])
+        
         # gato vao
         self.vaos['gato'] = self.get_vao(
             program=self.program.programs['default'],
@@ -68,6 +78,16 @@ class VAO:
         self.vaos['shadow_tapir'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['tapir'])
+        
+         # cartel vao
+        self.vaos['CartelFinal'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['CartelFinal'])
+
+        # shadow cartel vao
+        self.vaos['shadow_CartelFinal'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['CartelFinal'])
         
         # rana vao
         self.vaos['rana'] = self.get_vao(
@@ -118,6 +138,7 @@ class VAO:
         self.vaos['shadow_pato'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['pato'])
+    
 
         # dragon de mar mandarin vao
         self.vaos['seadragon'] = self.get_vao(

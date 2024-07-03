@@ -46,6 +46,8 @@ class Scene:
         add(Loris(app, vao_name='loris', tex_id='loris', pos=(15, -1, 0)))
         add(Pato(app, vao_name='pato', tex_id='pato', pos=(9, -1, -5)))
         add(SeaDragon(app, vao_name='seadragon', tex_id='seadragon', pos=(13, -1, -5)))
+        add(Armadillo(app, vao_name='armadillo', tex_id='armadillo', pos=(10, -1, -5)))
+        add(CartelFinal(app, vao_name='CartelFinal', tex_id='CartelFinal', pos=(12, -1, -5)))
 
 
     def render(self):

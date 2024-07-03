@@ -118,8 +118,18 @@ class Loris(ExtendedBaseModel):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
+class Armadillo(ExtendedBaseModel):
+    def __init__(self, app, vao_name='armadillo', tex_id='armadillo', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
 class Pato(ExtendedBaseModel):
     def __init__(self, app, vao_name='pato', tex_id='pato', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class CartelFinal(ExtendedBaseModel):
+    def __init__(self, app, vao_name='CartelFinal', tex_id='CartelFinal', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 

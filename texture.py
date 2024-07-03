@@ -22,9 +22,11 @@ class Texture:
         self.textures['tucan'] = self.get_texture(path='objects/Tucan/12260_Bird_Toucan_Diffuse.jpg')
         self.textures['anaconda'] = self.get_texture(path='objects/anaconda/Anaconda_diff.jpg')
         self.textures['loris'] = self.get_texture(path='objects/loris/13569_Slender_Loris_diffuse.jpg')
+        self.textures['armadillo'] = self.get_texture(path='objects/armadillo/10002_Armadillo_v1_Diffuse.jpg')
         self.textures['pato'] = self.get_texture(path='objects/MandarinDuck/12253_Mandarin_Duck_diff.jpg')
         self.textures['seadragon'] = self.get_texture(path='objects/seadragon/12267_seadragon_diffuse.jpg')
-
+        self.textures['CartelFinal'] = self.get_texture(path='objects\CartelFinal\signospost_Model_10_u1_v1_diffuse.jpeg')
+        
 
     def get_depth_texture(self):
         depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)
