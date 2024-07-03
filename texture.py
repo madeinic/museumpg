@@ -12,6 +12,7 @@ class Texture:
         self.textures[1] = self.get_texture(path='textures/marmol.jpg')
         self.textures[2] = self.get_texture(path='textures/cesped.jpeg')
         self.textures[3] = self.get_texture(path='textures/floor.png')
+        self.textures[4] = self.get_texture(path='textures/Techo.png')
         # Textura de la skybox
         self.textures['skybox'] = self.get_texture_cube(dir_path='textures/skybox/', ext='png')
         #texturas de modelos
@@ -29,7 +30,7 @@ class Texture:
         self.textures['seadragon'] = self.get_texture(path='objects/seadragon/12267_seadragon_diffuse.jpg')
         self.textures['CartelFinal'] = self.get_texture(path='objects/CartelFinal/signospost_Model_10_u1_v1_diffuse.jpeg')
         self.textures['dolphin'] = self.get_texture(path='objects/dolphin/10014_dolphin_v1_Diffuse.jpg')
-        
+        self.textures['columna'] = self.get_texture(path='objects/columna/columna.jpg')
 
     def get_depth_texture(self):
         depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)

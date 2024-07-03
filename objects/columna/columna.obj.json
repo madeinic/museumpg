@@ -1,0 +1,15 @@
+{
+  "created_at": "2024-07-03T00:06:04.106843",
+  "version": "0.1",
+  "mtllibs": [
+    "focas.mtl"
+  ],
+  "vertex_buffers": [
+    {
+      "material": "Material_0",
+      "vertex_format": "T2F_N3F_V3F",
+      "byte_offset": 0,
+      "byte_length": 11852640
+    }
+  ]
+}

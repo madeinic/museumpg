@@ -25,7 +25,7 @@ class VBO:
         self.vbos['armadillo'] = ArmadilloVBO(ctx)
         self.vbos['seadragon'] = SeaDragonVBO(ctx)
         self.vbos['dolphin'] = DolphinVBO(ctx)
-
+        self.vbos['columna'] = columnaVBO(ctx)
 
 
     def destroy(self):
@@ -198,6 +198,14 @@ class RanaVBO(BaseVBO):
         
     def get_vertex_data(self):
         return self.load_wavefront('objects/Frog/12270_Frog_v1_L3.obj')
+class columnaVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/columna/columna.obj')
     
 class TucanVBO(BaseVBO):
     def __init__(self, app):
@@ -263,3 +271,4 @@ class DolphinVBO(BaseVBO):
         
     def get_vertex_data(self):
         return self.load_wavefront('objects/dolphin/10014_dolphin_v2_max2011_it2.obj')
+ 

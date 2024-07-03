@@ -63,7 +63,7 @@ class Scene:
         generarLosa(30, (0, -2, 0),2)
         generarLosa(30,(0,-2, -60),3)
         #techo
-        generarLosa(30,(0,28, -60),3)
+        generarLosa(30,(0,19, -60),4)
         # Generar las paredes de la estructura de exhibición
         
         # Paredes frontales
@@ -98,7 +98,12 @@ class Scene:
         add(Armadillo(app, vao_name='armadillo', tex_id='armadillo', pos=(10, -1, -5)))
         add(CartelFinal(app, vao_name='CartelFinal', tex_id='CartelFinal', pos=(12, -1, -5)))
         add(Dolphin(app, vao_name='dolphin', tex_id='dolphin', pos=(22, -1, -70)))
-
+        add(columna(app, vao_name='columna', tex_id='columna', pos=(18, -18, -83)))
+        add(columna(app, vao_name='columna', tex_id='columna', pos=(-20, -18, -83)))
+        add(columna(app, vao_name='columna', tex_id='columna', pos=(18, -18, -60)))
+        add(columna(app, vao_name='columna', tex_id='columna', pos=(-20, -18, -60)))
+        add(columna(app, vao_name='columna', tex_id='columna', pos=(18, -18, -35)))
+        add(columna(app, vao_name='columna', tex_id='columna', pos=(-20, -18, -35)))
 
     def render(self):
         for obj in self.objects:

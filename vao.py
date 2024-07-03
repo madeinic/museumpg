@@ -39,6 +39,15 @@ class VAO:
         self.vaos['shadow_armadillo'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['armadillo'])
+        # columna vao
+        self.vaos['columna'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['columna'])
+        
+         #shadow columna vao
+        self.vaos['shadow_columna'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['columna'])
          # mono vao
         self.vaos['mono'] = self.get_vao(
             program=self.program.programs['default'],
@@ -109,6 +118,7 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['tucan'])
         
+       
         # anaconda vao
         self.vaos['anaconda'] = self.get_vao(
             program=self.program.programs['default'],
