@@ -150,6 +150,17 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['seadragon'])
 
+
+        # dolphin vao
+        self.vaos['dolphin'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['dolphin'])
+        
+        # shadow dolphinvao
+        self.vaos['shadow_dolphin'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['seadragon'])
+        
     #obtener vaos
     def get_vao(self, program, vbo):
         vao = self.ctx.vertex_array(program, [(vbo.vbo, vbo.format, *vbo.attribs)], skip_errors=True)

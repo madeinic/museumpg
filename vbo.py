@@ -24,6 +24,8 @@ class VBO:
         self.vbos['CartelFinal'] = CartelFinalVBO(ctx)
         self.vbos['armadillo'] = ArmadilloVBO(ctx)
         self.vbos['seadragon'] = SeaDragonVBO(ctx)
+        self.vbos['dolphin'] = DolphinVBO(ctx)
+
 
 
     def destroy(self):
@@ -252,3 +254,12 @@ class SeaDragonVBO(BaseVBO):
         
     def get_vertex_data(self):
         return self.load_wavefront('objects/seadragon/12267_seadragon_v1_L2.obj')
+
+class DolphinVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/dolphin/10014_dolphin_v2_max2011_it2.obj')

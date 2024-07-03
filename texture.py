@@ -27,7 +27,8 @@ class Texture:
         self.textures['armadillo'] = self.get_texture(path='objects/armadillo/10002_Armadillo_v1_Diffuse.jpg')
         self.textures['pato'] = self.get_texture(path='objects/MandarinDuck/12253_Mandarin_Duck_diff.jpg')
         self.textures['seadragon'] = self.get_texture(path='objects/seadragon/12267_seadragon_diffuse.jpg')
-        self.textures['CartelFinal'] = self.get_texture(path='objects\CartelFinal\signospost_Model_10_u1_v1_diffuse.jpeg')
+        self.textures['CartelFinal'] = self.get_texture(path='objects/CartelFinal/signospost_Model_10_u1_v1_diffuse.jpeg')
+        self.textures['dolphin'] = self.get_texture(path='objects/dolphin/10014_dolphin_v1_Diffuse.jpg')
         
 
     def get_depth_texture(self):
