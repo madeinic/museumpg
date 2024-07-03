@@ -62,6 +62,8 @@ class Scene:
         # Generar el suelo exterior
         generarLosa(30, (0, -2, 0),2)
         generarLosa(30,(0,-2, -60),3)
+        #techo
+        generarLosa(30,(0,28, -60),3)
         # Generar las paredes de la estructura de exhibición
         
         # Paredes frontales
