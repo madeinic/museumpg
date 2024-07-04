@@ -104,6 +104,11 @@ class Mono(ExtendedBaseModel):
 #         super().__init__(app, vao_name, tex_id, pos, rot, scale)
 #         self.on_init()
 
+class Frame(ExtendedBaseModel):
+    def __init__(self, app, vao_name='frame', tex_id='frame', pos=(90,90,90), rot=(0, -90, 0), scale=(1.0,1.0,1.0)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
 class Trunk(ExtendedBaseModel):
     def __init__(self, app, vao_name='trunk', tex_id='trunk', pos=(0,0,0), rot=(-90,0,0), scale=(1.5,1.5,1.5)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)

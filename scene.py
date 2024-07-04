@@ -103,6 +103,7 @@ class Scene:
         add(Quetzal(app, vao_name='quetzal', tex_id='quetzal', pos=(0, 1, -80)))
         add(Turkey(app, vao_name='turkey', tex_id='turkey', pos=(5, -1.09, -80)))
         add(Plataforma(app, vao_name='plataforma', tex_id='plataforma', pos=(0, -1, -83)))
+        add(Frame(app, vao_name='frame', tex_id='frame', pos=(0, 1, -86)))
 
         
         add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(0, 0, -80)))
