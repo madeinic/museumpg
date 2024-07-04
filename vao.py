@@ -171,6 +171,46 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['seadragon'])
         
+        # camel vao
+        self.vaos['camel'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['camel'])
+        
+        # shadow camel vao
+        self.vaos['shadow_camel'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['camel'])
+        
+        # penguin vao
+        self.vaos['penguin'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['penguin'])
+        
+        # shadow penguin vao
+        self.vaos['shadow_penguin'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['penguin'])
+
+        # quetzal vao
+        self.vaos['quetzal'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['quetzal'])
+        
+        #  shadow quetzal vao
+        self.vaos['shadow_quetzal'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['quetzal'])
+        
+         # turkey vao
+        self.vaos['turkey'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['turkey'])
+        
+        #  shadow turkey vao
+        self.vaos['shadow_turkey'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['turkey'])
+        
     #obtener vaos
     def get_vao(self, program, vbo):
         vao = self.ctx.vertex_array(program, [(vbo.vbo, vbo.format, *vbo.attribs)], skip_errors=True)

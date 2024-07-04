@@ -26,6 +26,10 @@ class VBO:
         self.vbos['seadragon'] = SeaDragonVBO(ctx)
         self.vbos['dolphin'] = DolphinVBO(ctx)
         self.vbos['columna'] = columnaVBO(ctx)
+        self.vbos['camel'] = CamelVBO(ctx)
+        self.vbos['penguin'] = PenguinVBO(ctx)
+        self.vbos['quetzal'] = QuetzalVBO(ctx)
+        self.vbos['turkey'] = TurkeyVBO(ctx)
 
 
     def destroy(self):
@@ -271,4 +275,39 @@ class DolphinVBO(BaseVBO):
         
     def get_vertex_data(self):
         return self.load_wavefront('objects/dolphin/10014_dolphin_v2_max2011_it2.obj')
- 
+    
+class CamelVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/camel/Camel.obj')
+
+class PenguinVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/penguin/10033_Penguin_v1_iterations-2.obj')
+    
+class QuetzalVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/quetzal/12245_Bird_v1_l2.obj')
+
+class TurkeyVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/turkey/11560_wild_turkey_male_v2_l2.obj')  

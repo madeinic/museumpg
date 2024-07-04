@@ -1,0 +1,15 @@
+{
+  "created_at": "2024-07-03T21:17:05.245400",
+  "version": "0.1",
+  "mtllibs": [
+    "11560_wild_turkey_male_v2_l2.mtl"
+  ],
+  "vertex_buffers": [
+    {
+      "material": "wild_turkey_male",
+      "vertex_format": "T2F_N3F_V3F",
+      "byte_offset": 0,
+      "byte_length": 10804224
+    }
+  ]
+}

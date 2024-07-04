@@ -31,6 +31,11 @@ class Texture:
         self.textures['CartelFinal'] = self.get_texture(path='objects/CartelFinal/signospost_Model_10_u1_v1_diffuse.jpeg')
         self.textures['dolphin'] = self.get_texture(path='objects/dolphin/10014_dolphin_v1_Diffuse.jpg')
         self.textures['columna'] = self.get_texture(path='objects/columna/columna.jpg')
+        self.textures['camel'] = self.get_texture(path='objects/camel/10007_Camel_v03.jpg')
+        self.textures['penguin'] = self.get_texture(path='objects/penguin/10033_Penguin_v1_Diffuse.jpg')
+        self.textures['quetzal'] = self.get_texture(path='objects/quetzal/12245_Bird_diffuse.jpg')
+        self.textures['turkey'] = self.get_texture(path='objects/turkey/wild_turkey_male_diffuse_v2.jpg')
+
 
     def get_depth_texture(self):
         depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)

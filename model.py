@@ -104,12 +104,12 @@ class Rana(ExtendedBaseModel):
         self.on_init()
 
 class Tucan(ExtendedBaseModel):
-    def __init__(self, app, vao_name='tucan', tex_id='tucan', pos=(0,0,0), rot=(-90,0,0), scale=(0.04,0.04,0.04)):
+    def __init__(self, app, vao_name='tucan', tex_id='tucan', pos=(90,90,90), rot=(-90, -50, 110), scale=(0.06,0.06, 0.06)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
 class Anaconda(ExtendedBaseModel):
-    def __init__(self, app, vao_name='anaconda', tex_id='anaconda', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+    def __init__(self, app, vao_name='anaconda', tex_id='anaconda', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
@@ -146,6 +146,26 @@ class SeaDragon(ExtendedBaseModel):
 
 class Dolphin(ExtendedBaseModel):
     def __init__(self, app, vao_name='dolphin', tex_id='dolphin', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Camel(ExtendedBaseModel):
+    def __init__(self, app, vao_name='camel', tex_id='camel', pos=(0,0,0), rot=(-90,0,0), scale=(0.005,0.005,0.005)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Penguin(ExtendedBaseModel):
+    def __init__(self, app, vao_name='penguin', tex_id='penguin', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Quetzal(ExtendedBaseModel):
+    def __init__(self, app, vao_name='quetzal', tex_id='quetzal', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Turkey(ExtendedBaseModel):
+    def __init__(self, app, vao_name='turkey', tex_id='turkey', pos=(0,0,0), rot=(-90,0,0), scale=(0.02,0.02,0.02)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
