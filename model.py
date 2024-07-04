@@ -214,6 +214,11 @@ class PinkFish(ExtendedBaseModel):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
+class Plataforma(ExtendedBaseModel):
+    def __init__(self, app, vao_name='plataforma', tex_id='plataforma', pos=(0,0,0), rot=(-90,0,0), scale=(0.08,0.03,0.02)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
 class Diver(ExtendedBaseModel):
     def __init__(self, app, vao_name='diver', tex_id='diver', pos=(0,0,0), rot=(130,150,70), scale=(0.3,0.3,0.3)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)

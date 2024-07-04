@@ -99,9 +99,11 @@ class Scene:
 
         #Seccion de aves
         add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(-10, 2, -80)))
-        add(Pato(app, vao_name='pato', tex_id='pato', pos=(-5, -1, -80)))
+        add(Pato(app, vao_name='pato', tex_id='pato', pos=(-5, -1.09, -80)))
         add(Quetzal(app, vao_name='quetzal', tex_id='quetzal', pos=(0, 1, -80)))
-        add(Turkey(app, vao_name='turkey', tex_id='turkey', pos=(5, -1, -80)))
+        add(Turkey(app, vao_name='turkey', tex_id='turkey', pos=(5, -1.09, -80)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='plataforma', pos=(0, -1, -83)))
+
         
         add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(0, 0, -80)))
         add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(-10.4, 0.5, -80)))
@@ -129,6 +131,9 @@ class Scene:
         add(columna(app, vao_name='columna', tex_id='columna', pos=(-20, -18, -83)))
         add(columna(app, vao_name='columna', tex_id='columna', pos=(18, -18, -45)))
         add(columna(app, vao_name='columna', tex_id='columna', pos=(-20, -18, -45)))
+
+        #plataformas
+
 
     def render(self):
         for obj in self.objects:

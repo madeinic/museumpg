@@ -30,6 +30,16 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['cube'])
         
+        # plataforma vao
+        self.vaos['plataforma'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['plataforma'])
+        
+        # shadow plataforma vao
+        self.vaos['shadow_plataforma'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['plataforma'])
+        
         # trunk vao
         self.vaos['trunk'] = self.get_vao(
             program=self.program.programs['default'],

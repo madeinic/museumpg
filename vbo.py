@@ -39,6 +39,7 @@ class VBO:
         self.vbos['diver'] = DiverVBO(ctx)
         self.vbos['coral'] = CoralVBO(ctx)
         self.vbos['trunk'] = TrunkVBO(ctx)
+        self.vbos['plataforma'] = PlataformaVBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -152,6 +153,15 @@ class AdvancedSkyBoxVBO(BaseVBO):
         vertices = [(-1, -1, z), (3, -1, z), (-1, 3, z)]
         vertex_data = np.array(vertices, dtype='f4')
         return vertex_data
+
+class PlataformaVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/base/10450_Rectangular_Grass_Patch_v1_iterations-2.obj')
 
 class TrunkVBO(BaseVBO):
     def __init__(self, app):

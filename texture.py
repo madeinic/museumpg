@@ -44,6 +44,7 @@ class Texture:
         self.textures['diver'] = self.get_texture(path='objects/Diver/13018_Aquarium_Deep_Sea_Diver_diff.jpg')
         self.textures['coral'] = self.get_texture(path='objects/coral/10010_Coral_v1_Diffuse.jpg')
         self.textures['trunk'] = self.get_texture(path='objects/Trunk/trunk wood_final_map.jpg')
+        self.textures['plataforma'] = self.get_texture(path='objects/base/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg')
 
     def get_depth_texture(self):
         depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)
