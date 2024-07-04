@@ -238,7 +238,37 @@ class VAO:
         self.vaos['shadow_turkey'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['turkey'])
+
+        # seahorse vao
+        self.vaos['seahorse'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['seahorse'])
         
+        #  shadow seahorse vao
+        self.vaos['shadow_seahorse'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['seahorse'])
+
+        # crab vao
+        self.vaos['crab'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['crab'])
+        
+        #  shadow crab vao
+        self.vaos['shadow_crab'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['crab'])
+        
+        # pink fish vao
+        self.vaos['pinkfish'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['pinkfish'])
+        
+        #  shadow pink fish vao
+        self.vaos['shadow_pinkfish'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['pinkfish'])
+
     #obtener vaos
     def get_vao(self, program, vbo):
         vao = self.ctx.vertex_array(program, [(vbo.vbo, vbo.format, *vbo.attribs)], skip_errors=True)

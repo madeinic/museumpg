@@ -123,22 +123,22 @@ class Grass(ExtendedBaseModel):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 class Anaconda(ExtendedBaseModel):
-    def __init__(self, app, vao_name='anaconda', tex_id='anaconda', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
+    def __init__(self, app, vao_name='anaconda', tex_id='anaconda', pos=(0,0,0), rot=(-90,-90,180), scale=(0.05,0.05,0.05)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
 class Loris(ExtendedBaseModel):
-    def __init__(self, app, vao_name='loris', tex_id='loris', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+    def __init__(self, app, vao_name='loris', tex_id='loris', pos=(0,0,0), rot=(-90,-90,180), scale=(0.03,0.03,0.03)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
 class Armadillo(ExtendedBaseModel):
-    def __init__(self, app, vao_name='armadillo', tex_id='armadillo', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+    def __init__(self, app, vao_name='armadillo', tex_id='armadillo', pos=(0,0,0), rot=(-90,0, 0), scale=(0.03,0.03,0.03)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
 class Pato(ExtendedBaseModel):
-    def __init__(self, app, vao_name='pato', tex_id='pato', pos=(0,0,0), rot=(-90,0,0), scale=(0.03,0.03,0.03)):
+    def __init__(self, app, vao_name='pato', tex_id='pato', pos=(0,0,0), rot=(-90,-90,180), scale=(0.04,0.04,0.04)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
@@ -174,12 +174,27 @@ class Penguin(ExtendedBaseModel):
         self.on_init()
 
 class Quetzal(ExtendedBaseModel):
-    def __init__(self, app, vao_name='quetzal', tex_id='quetzal', pos=(0,0,0), rot=(-20,-20,-90), scale=(0.05,0.05,0.05)):
+    def __init__(self, app, vao_name='quetzal', tex_id='quetzal', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
 class Turkey(ExtendedBaseModel):
     def __init__(self, app, vao_name='turkey', tex_id='turkey', pos=(0,0,0), rot=(-90,0,0), scale=(0.02,0.02,0.02)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class SeaHorse(ExtendedBaseModel):
+    def __init__(self, app, vao_name='seahorse', tex_id='seahorse', pos=(0,0,0), rot=(-90,0,0), scale=(0.1,0.1,0.1)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Crab(ExtendedBaseModel):
+    def __init__(self, app, vao_name='crab', tex_id='crab', pos=(0,0,0), rot=(-90,0,0), scale=(0.1,0.1,0.1)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class PinkFish(ExtendedBaseModel):
+    def __init__(self, app, vao_name='pinkfish', tex_id='pinkfish', pos=(0,0,0), rot=(-90,0,0), scale=(0.3,0.3,0.3)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 

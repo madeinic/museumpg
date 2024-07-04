@@ -38,7 +38,9 @@ class Texture:
         self.textures['dino1'] = self.get_texture(path='objects/dino1/13623_Quetzalcoatlus.jpg')
         self.textures['dino2'] = self.get_texture(path='objects/dino2/Chirostenotes_diffuse.jpg')        
         self.textures['grass'] = self.get_texture(path='objects/grass/10438_Circular_Grass_Patch_v1_Diffuse.jpg')
-
+        self.textures['seahorse'] = self.get_texture(path='objects/seahorse/10044_SeaHorse_v1_Diffuse.jpg')
+        self.textures['crab'] = self.get_texture(path='objects/Crab/10012_crab_v1_Diffuse.jpg')
+        self.textures['pinkfish'] = self.get_texture(path='objects/PinkFish/13014_Six_Line_Wrasse_v1_diff.jpg')
 
 
     def get_depth_texture(self):

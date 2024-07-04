@@ -33,6 +33,9 @@ class VBO:
         self.vbos['dino1'] = Dino1VBO(ctx)
         self.vbos['dino2'] = Dino2VBO(ctx)
         self.vbos['grass'] = grassVBO(ctx)
+        self.vbos['seahorse'] = SeaHorseVBO(ctx)
+        self.vbos['crab'] = CrabVBO(ctx)
+        self.vbos['pinkfish'] = PinkFishVBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -339,3 +342,30 @@ class TurkeyVBO(BaseVBO):
         
     def get_vertex_data(self):
         return self.load_wavefront('objects/turkey/11560_wild_turkey_male_v2_l2.obj')  
+        
+class SeaHorseVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/seahorse/10044_SeaHorse_v1_iterations-2.obj')  
+    
+class CrabVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/Crab/10012_crab_v2_iterations-1.obj')  
+    
+class PinkFishVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/PinkFish/13014_Six_Line_Wrasse_v1_l3.obj')  
