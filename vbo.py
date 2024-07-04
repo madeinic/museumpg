@@ -30,7 +30,9 @@ class VBO:
         self.vbos['penguin'] = PenguinVBO(ctx)
         self.vbos['quetzal'] = QuetzalVBO(ctx)
         self.vbos['turkey'] = TurkeyVBO(ctx)
-
+        self.vbos['dino1'] = Dino1VBO(ctx)
+        self.vbos['dino2'] = Dino2VBO(ctx)
+        self.vbos['grass'] = grassVBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -246,6 +248,32 @@ class PatoVBO(BaseVBO):
     def get_vertex_data(self):
         return self.load_wavefront('objects/MandarinDuck/12253_Mandarin_Duck_v1_l3.obj')
     
+class Dino1VBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/Dino1/13623_Quetzalcoatlus_v1_L2.obj')
+
+class Dino2VBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/Dino2/13632_Chirostenotes_v1_L2.obj')
+    
+class grassVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/grass/10438_Circular_Grass_Patch_v1_iterations-2.obj')
 class CartelFinalVBO(BaseVBO):
     def __init__(self, app):
         super().__init__(app)

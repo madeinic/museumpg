@@ -35,6 +35,10 @@ class Texture:
         self.textures['penguin'] = self.get_texture(path='objects/penguin/10033_Penguin_v1_Diffuse.jpg')
         self.textures['quetzal'] = self.get_texture(path='objects/quetzal/12245_Bird_diffuse.jpg')
         self.textures['turkey'] = self.get_texture(path='objects/turkey/wild_turkey_male_diffuse_v2.jpg')
+        self.textures['dino1'] = self.get_texture(path='objects/dino1/13623_Quetzalcoatlus.jpg')
+        self.textures['dino2'] = self.get_texture(path='objects/dino2/Chirostenotes_diffuse.jpg')        
+        self.textures['grass'] = self.get_texture(path='objects/grass/10438_Circular_Grass_Patch_v1_Diffuse.jpg')
+
 
 
     def get_depth_texture(self):

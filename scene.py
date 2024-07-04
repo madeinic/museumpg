@@ -67,18 +67,18 @@ class Scene:
         # Generar las paredes de la estructura de exhibición
         
         # Paredes frontales
-        #mas cercanas
-        generarPared(15, (-34, 0, -30), 'frontal', 1)
-        generarPared(15, (4, 0, -30), 'frontal', 1)
+        #mas cercanas 
+        generarPared(15, (-34, -9, -30), 'frontal', 1)
+        generarPared(15, (4, -9, -30), 'frontal', 1)
         #mas alejadas
-        generarPared(15, (-30, 0, -90), 'frontal', 1)
-        generarPared(15, (0, 0, -90), 'frontal', 1)
+        generarPared(15, (-30, -9, -90), 'frontal', 1)
+        generarPared(15, (0, -9, -90), 'frontal', 1)
 
         # Paredes laterales
-        generarPared(15, (-30, 0, -60), 'lateral', 1)
-        generarPared(15, (-30, 0, -90), 'lateral', 1)
-        generarPared(15, (30, 0, -90), 'lateral', 1)
-        generarPared(15, (30, 0, -60), 'lateral', 1)
+        generarPared(15, (-30, -9, -60), 'lateral', 1)
+        generarPared(15, (-30, -9, -90), 'lateral', 1)
+        generarPared(15, (30, -9, -90), 'lateral', 1)
+        generarPared(15, (30, -9, -60), 'lateral', 1)
             
         '''n, s = 30, 2
         for x in range(-n, n, s):
@@ -90,7 +90,7 @@ class Scene:
         #add(Perro(app, vao_name='perro', tex_id='perro', pos=(10, -1, -10)))  
         add(Tapir(app, vao_name='tapir', tex_id='tapir', pos=(-15, -1, -70))) #original -15,-1,-70
         add(Rana(app, vao_name='rana', tex_id='rana', pos=(22, -1, -80)))
-        add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(-10, -1, -80)))
+        add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(-10, 2, -80)))
         add(Anaconda(app, vao_name='anaconda', tex_id='anaconda', pos=(-5, -1, -80)))
         add(Loris(app, vao_name='loris', tex_id='loris', pos=(15, -1, 0)))
         add(Pato(app, vao_name='pato', tex_id='pato', pos=(9, -1, -5)))
@@ -100,8 +100,11 @@ class Scene:
         add(Dolphin(app, vao_name='dolphin', tex_id='dolphin', pos=(18, -1, -70)))
         add(Camel(app, vao_name='camel', tex_id='camel', pos=(10, -1, -70)))
         add(Penguin(app, vao_name='penguin', tex_id='penguin', pos=(10, -1, -80)))
-        add(Quetzal(app, vao_name='quetzal', tex_id='quetzal', pos=(0, -1, -80)))
+        add(Quetzal(app, vao_name='quetzal', tex_id='quetzal', pos=(0, 2, -80)))
         add(Turkey(app, vao_name='turkey', tex_id='turkey', pos=(0, -1, -70)))
+        add(Dino1(app, vao_name='dino1', tex_id='dino1', pos=(0, 6, -75)))
+        add(Dino2(app, vao_name='dino2', tex_id='dino2', pos=(-1, -1, -60)))
+        add(Grass(app, vao_name='grass', tex_id='grass', pos=(-1, -1, -60)))
         
         add(columna(app, vao_name='columna', tex_id='columna', pos=(18, -18, -83)))
         add(columna(app, vao_name='columna', tex_id='columna', pos=(-20, -18, -83)))

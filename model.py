@@ -104,10 +104,24 @@ class Rana(ExtendedBaseModel):
         self.on_init()
 
 class Tucan(ExtendedBaseModel):
-    def __init__(self, app, vao_name='tucan', tex_id='tucan', pos=(90,90,90), rot=(-90, -50, 110), scale=(0.06,0.06, 0.06)):
+    def __init__(self, app, vao_name='tucan', tex_id='tucan', pos=(90,90,90), rot=(40, 100, -90), scale=(0.06,0.06, 0.06)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
+class Dino1(ExtendedBaseModel):
+    def __init__(self, app, vao_name='dino1', tex_id='dino1', pos=(90,90,90), rot=(-90,0,0), scale=(0.03,0.03, 0.03)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Dino2(ExtendedBaseModel):
+    def __init__(self, app, vao_name='dino2', tex_id='dino2', pos=(90,90,90), rot=(-90,0,0), scale=(0.06,0.06, 0.06)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
+
+class Grass(ExtendedBaseModel):
+    def __init__(self, app, vao_name='grass', tex_id='grass', pos=(90,90,90), rot=(-90,0,0), scale=(0.01,0.01, 0.01)):
+        super().__init__(app, vao_name, tex_id, pos, rot, scale)
+        self.on_init()
 class Anaconda(ExtendedBaseModel):
     def __init__(self, app, vao_name='anaconda', tex_id='anaconda', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
@@ -160,7 +174,7 @@ class Penguin(ExtendedBaseModel):
         self.on_init()
 
 class Quetzal(ExtendedBaseModel):
-    def __init__(self, app, vao_name='quetzal', tex_id='quetzal', pos=(0,0,0), rot=(-90,0,0), scale=(0.05,0.05,0.05)):
+    def __init__(self, app, vao_name='quetzal', tex_id='quetzal', pos=(0,0,0), rot=(-20,-20,-90), scale=(0.05,0.05,0.05)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 

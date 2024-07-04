@@ -68,6 +68,34 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['gato'])
         
+        # dino1 vao
+        self.vaos['dino1'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['dino1'])
+        
+        # shadow dino1 vao
+        self.vaos['shadow_dino1'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['dino1'])
+        # dino2 vao
+        self.vaos['dino2'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['dino2'])
+        
+        # shadow dino2 vao
+        self.vaos['shadow_dino2'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['dino2'])
+        # grass vao
+        self.vaos['grass'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['grass'])
+        
+        # shadow grass vao
+        self.vaos['shadow_grass'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['grass'])
+
         # perro vao
         self.vaos['perro'] = self.get_vao(
             program=self.program.programs['default'],
