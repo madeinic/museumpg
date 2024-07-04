@@ -38,6 +38,7 @@ class VBO:
         self.vbos['pinkfish'] = PinkFishVBO(ctx)
         self.vbos['diver'] = DiverVBO(ctx)
         self.vbos['coral'] = CoralVBO(ctx)
+        self.vbos['trunk'] = TrunkVBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -152,6 +153,15 @@ class AdvancedSkyBoxVBO(BaseVBO):
         vertex_data = np.array(vertices, dtype='f4')
         return vertex_data
 
+class TrunkVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/Trunk/trunk wood.obj')
+  
 class MonoVBO(BaseVBO):
     def __init__(self, app):
         super().__init__(app)
@@ -388,4 +398,5 @@ class CoralVBO(BaseVBO):
         self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
         
     def get_vertex_data(self):
-        return self.load_wavefront('objects/coral/10010_Coral_v1_L3.obj')        
+        return self.load_wavefront('objects/coral/10010_Coral_v1_L3.obj')       
+    

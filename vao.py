@@ -30,6 +30,16 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['cube'])
         
+        # trunk vao
+        self.vaos['trunk'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['trunk'])
+        
+        # shadow trunk vao
+        self.vaos['shadow_trunk'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['trunk'])
+
         # armadillo vao
         self.vaos['armadillo'] = self.get_vao(
             program=self.program.programs['default'],
@@ -288,7 +298,7 @@ class VAO:
         self.vaos['shadow_coral'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['coral'])
-        
+
     #obtener vaos
     def get_vao(self, program, vbo):
         vao = self.ctx.vertex_array(program, [(vbo.vbo, vbo.format, *vbo.attribs)], skip_errors=True)
