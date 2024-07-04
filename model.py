@@ -20,11 +20,22 @@ class BaseModel:
     
     #funcion para calcular delimtacion
     def calculate_bounding_box(self):
-        size = 1.0  # Tamaño base
-        min_corner = self.pos - glm.vec3(size * 1.5)
-        max_corner = self.pos + glm.vec3(size * 1.5)
+        # Obtén las dimensiones originales del modelo
+        dimensions = self.get_model_dimensions()
+
+        # Ajustar las dimensiones con la escala
+        half_scale = glm.vec3(dimensions) * self.scale * 0.5
+        adjustment_factor = 1.2  # Factor de ajuste para ampliar la caja delimitadora
+        min_corner = self.pos - (half_scale * adjustment_factor)
+        max_corner = self.pos + (half_scale * adjustment_factor)
         return (min_corner, max_corner)
     
+    def get_model_dimensions(self):
+        # Devuelve las dimensiones del modelo en su espacio de modelo, ajustando segun el tamaño del modelo en especifico
+        if self.vao_name == 'columna':
+            return glm.vec3(2, 50, 2)  # columna alta
+        else:
+            return glm.vec3(3, 3, 3)  # Tamaño base por defecto
    
     def get_model_matrix(self):
         m_model = glm.mat4()
