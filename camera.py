@@ -6,7 +6,7 @@ FOV = 50  # deg
 NEAR = 0.1
 FAR = 100
 BASE_SPEED = 0.005
-BOOSTED_SPEED = 0.01  # Velocidad aumentada al presionar Shift
+BOOSTED_SPEED = 0.10  # Velocidad aumentada al presionar Shift
 SENSITIVITY = 0.04
 
 class Camera:
@@ -79,7 +79,7 @@ class Camera:
             self.position = potential_position
 
         # Limitar la altura de la cámara
-        self.position.y = max(self.min_height, min(self.max_height, self.position.y))
+        #self.position.y = max(self.min_height, min(self.max_height, self.position.y))
 
     #funciona para verificar si la camara esta tocando una caja delimitadora
     def detect_collision(self, new_position):

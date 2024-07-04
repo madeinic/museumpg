@@ -105,7 +105,7 @@ class Mono(ExtendedBaseModel):
 #         self.on_init()
 
 class Tapir(ExtendedBaseModel):
-    def __init__(self, app, vao_name='tapir', tex_id='tapir', pos=(0,0,0), rot=(-90,-90,180), scale=(0.05,0.05,0.05)):
+    def __init__(self, app, vao_name='tapir', tex_id='tapir', pos=(0,0,0), rot=(-50,-40,-80), scale=(0.05,0.05,0.05)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
@@ -115,7 +115,7 @@ class Rana(ExtendedBaseModel):
         self.on_init()
 
 class Tucan(ExtendedBaseModel):
-    def __init__(self, app, vao_name='tucan', tex_id='tucan', pos=(90,90,90), rot=(40, 100, -90), scale=(0.06,0.06, 0.06)):
+    def __init__(self, app, vao_name='tucan', tex_id='tucan', pos=(90,90,90), rot=(260, -90, 160), scale=(0.06,0.06, 0.06)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
@@ -144,12 +144,12 @@ class Loris(ExtendedBaseModel):
         self.on_init()
 
 class Armadillo(ExtendedBaseModel):
-    def __init__(self, app, vao_name='armadillo', tex_id='armadillo', pos=(0,0,0), rot=(-90,0, 0), scale=(0.03,0.03,0.03)):
+    def __init__(self, app, vao_name='armadillo', tex_id='armadillo', pos=(0,0,0), rot=(-90,270, -180), scale=(0.03,0.03,0.03)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
 class Pato(ExtendedBaseModel):
-    def __init__(self, app, vao_name='pato', tex_id='pato', pos=(0,0,0), rot=(-90,-90,180), scale=(0.04,0.04,0.04)):
+    def __init__(self, app, vao_name='pato', tex_id='pato', pos=(0,0,0), rot=(-45,-40,-75), scale=(0.04,0.04,0.04)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
@@ -175,7 +175,7 @@ class Dolphin(ExtendedBaseModel):
         self.on_init()
 
 class Camel(ExtendedBaseModel):
-    def __init__(self, app, vao_name='camel', tex_id='camel', pos=(0,0,0), rot=(-90,0,0), scale=(0.005,0.005,0.005)):
+    def __init__(self, app, vao_name='camel', tex_id='camel', pos=(0,0,0), rot=(90,180,0), scale=(0.005,0.005,0.005)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
@@ -195,12 +195,12 @@ class Turkey(ExtendedBaseModel):
         self.on_init()
 
 class SeaHorse(ExtendedBaseModel):
-    def __init__(self, app, vao_name='seahorse', tex_id='seahorse', pos=(0,0,0), rot=(-90,0,0), scale=(0.1,0.1,0.1)):
+    def __init__(self, app, vao_name='seahorse', tex_id='seahorse', pos=(0,0,0), rot=(-130,-40,80), scale=(0.1,0.1,0.1)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
 class Crab(ExtendedBaseModel):
-    def __init__(self, app, vao_name='crab', tex_id='crab', pos=(0,0,0), rot=(-90,0,0), scale=(0.1,0.1,0.1)):
+    def __init__(self, app, vao_name='crab', tex_id='crab', pos=(0,0,0), rot=(-45,-40,-80), scale=(0.1,0.1,0.1)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
@@ -210,7 +210,7 @@ class PinkFish(ExtendedBaseModel):
         self.on_init()
 
 class Diver(ExtendedBaseModel):
-    def __init__(self, app, vao_name='diver', tex_id='diver', pos=(0,0,0), rot=(-90,0,0), scale=(0.3,0.3,0.3)):
+    def __init__(self, app, vao_name='diver', tex_id='diver', pos=(0,0,0), rot=(130,150,70), scale=(0.3,0.3,0.3)):
         super().__init__(app, vao_name, tex_id, pos, rot, scale)
         self.on_init()
 
