@@ -41,7 +41,8 @@ class Texture:
         self.textures['seahorse'] = self.get_texture(path='objects/seahorse/10044_SeaHorse_v1_Diffuse.jpg')
         self.textures['crab'] = self.get_texture(path='objects/Crab/10012_crab_v1_Diffuse.jpg')
         self.textures['pinkfish'] = self.get_texture(path='objects/PinkFish/13014_Six_Line_Wrasse_v1_diff.jpg')
-
+        self.textures['diver'] = self.get_texture(path='objects/Diver/13018_Aquarium_Deep_Sea_Diver_diff.jpg')
+        self.textures['coral'] = self.get_texture(path='objects/coral/10010_Coral_v1_Diffuse.jpg')
 
     def get_depth_texture(self):
         depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)

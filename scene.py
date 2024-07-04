@@ -108,6 +108,8 @@ class Scene:
         add(SeaHorse(app, vao_name='seahorse', tex_id='seahorse', pos=(20, -1, -75)))
         add(Crab(app, vao_name='crab', tex_id='crab', pos=(20, -1, -70)))
         add(PinkFish(app, vao_name='pinkfish', tex_id='pinkfish', pos=(20, -1, -73)))
+        add(Diver(app, vao_name='diver', tex_id='diver', pos=(25, -1, -65)))
+        add(Coral(app, vao_name='coral', tex_id='coral', pos=(22, -1, -66)))
         
         add(columna(app, vao_name='columna', tex_id='columna', pos=(18, -18, -83)))
         add(columna(app, vao_name='columna', tex_id='columna', pos=(-20, -18, -83)))

@@ -1,7 +1,7 @@
 from vbo import VBO
 from shader_program import ShaderProgram
 
-
+#diver falta importar y las halgas 
 class VAO:
     def __init__(self, ctx):
         self.ctx = ctx
@@ -269,6 +269,26 @@ class VAO:
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['pinkfish'])
 
+        # diver vao
+        self.vaos['diver'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['diver'])
+        
+        #  shadow diver vao
+        self.vaos['shadow_diver'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['diver'])
+
+        # coral vao
+        self.vaos['coral'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['coral'])
+        
+        #  shadow coral vao
+        self.vaos['shadow_coral'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['coral'])
+        
     #obtener vaos
     def get_vao(self, program, vbo):
         vao = self.ctx.vertex_array(program, [(vbo.vbo, vbo.format, *vbo.attribs)], skip_errors=True)

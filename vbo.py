@@ -36,6 +36,8 @@ class VBO:
         self.vbos['seahorse'] = SeaHorseVBO(ctx)
         self.vbos['crab'] = CrabVBO(ctx)
         self.vbos['pinkfish'] = PinkFishVBO(ctx)
+        self.vbos['diver'] = DiverVBO(ctx)
+        self.vbos['coral'] = CoralVBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -369,3 +371,21 @@ class PinkFishVBO(BaseVBO):
         
     def get_vertex_data(self):
         return self.load_wavefront('objects/PinkFish/13014_Six_Line_Wrasse_v1_l3.obj')  
+    
+class DiverVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/Diver/13018_Aquarium_Deep_Sea_Diver_v1_L1.obj')  
+
+class CoralVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/coral/10010_Coral_v1_L3.obj')        

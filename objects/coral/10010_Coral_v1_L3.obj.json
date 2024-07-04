@@ -1,0 +1,15 @@
+{
+  "created_at": "2024-07-04T10:17:22.586241",
+  "version": "0.1",
+  "mtllibs": [
+    "10010_Coral_v1_L3.mtl"
+  ],
+  "vertex_buffers": [
+    {
+      "material": "10010_Coral_v1",
+      "vertex_format": "T2F_N3F_V3F",
+      "byte_offset": 0,
+      "byte_length": 8294400
+    }
+  ]
+}
