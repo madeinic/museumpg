@@ -73,7 +73,22 @@ class Scene:
         self.add_sound_area((-5, -1.09, -80), 5, 'sound/pato_mandarin.mp3',pg.K_f)
         self.add_sound_area((0, 1, -80), 5, 'sound/Quetzal.mp3',pg.K_f)
         self.add_sound_area((5, -1.09, -80), 5, 'sound/Pavo.mp3',pg.K_f)
-        
+
+        #Acuatico
+        self.add_sound_area((25, 0, -65), 4, 'sound/Delfin.mp3',pg.K_f)
+        self.add_sound_area((25, 0, -75), 4, 'sound/Penguin.mp3',pg.K_f)
+        self.add_sound_area((20, 0, -70), 4, 'sound/caballo_mar.mp3',pg.K_f)
+        self.add_sound_area((20, 0, -55), 4, 'sound/Cangrejo.mp3',pg.K_f)
+        self.add_sound_area((20, 0, -63), 4, 'sound/Burbuja.mp3',pg.K_f)
+
+        #Terrestre
+        self.add_sound_area((-20, -1, -65), 4, 'sound/Tapir.mp3',pg.K_f)
+        self.add_sound_area((-20, -0.8, -55), 4, 'sound/Camello.mp3',pg.K_f)
+        self.add_sound_area((-20, -0.9, -75), 4, 'sound/Armadillo.mp3',pg.K_f)
+        self.add_sound_area((-15, 0, -57), 4, 'sound/Rana.mp3',pg.K_f)
+        self.add_sound_area((-15, -1, -63), 4, 'sound/Loris.mp3',pg.K_f)
+        self.add_sound_area((-15, -1, -70), 4, 'sound/Anaconda.mp3',pg.K_f)
+     
         # Generar el suelo exterior
         generarLosa(30, (0, -2, 0),2)
         generarLosa(30,(0,-2, -60),3)
