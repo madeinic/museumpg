@@ -13,7 +13,17 @@ Exotic Animals Museum is a program developed with Python, Pygame and OpenGL that
 
 ### How to run the program
 
-The main.py file must be executed in order to start the program.
+```
+pip install -r requirements.txt 
+```
+
+```
+env/Scripts/Activate 
+```
+
+```
+python main.py
+```
 
 ### How to use the program
 
