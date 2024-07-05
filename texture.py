@@ -46,6 +46,8 @@ class Texture:
         self.textures['trunk'] = self.get_texture(path='objects/Trunk/trunk wood_final_map.jpg')
         self.textures['plataforma'] = self.get_texture(path='objects/base/10450_Rectangular_Grass_Patch_v1_Diffuse.jpg')
         self.textures['frame'] = self.get_texture(path='objects/frame/mountain.jpg')
+        self.textures['frame2'] = self.get_texture(path='objects/frame/sea.jpg')
+        self.textures['frame3'] = self.get_texture(path='objects/frame/bosque.jpg')
 
     def get_depth_texture(self):
         depth_texture = self.ctx.depth_texture(self.app.WIN_SIZE)

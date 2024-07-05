@@ -34,7 +34,7 @@ class SoundArea:
         print(f'Distance to sound area: {distance}')
         if distance < self.radius:
             if key_pressed[self.key]:
-                volume = 1 - (distance / self.radius)
+                volume = 2 - (distance / self.radius)
                 print(f'Setting volume: {volume}')
                 self.set_volume(volume)
                 self.play()

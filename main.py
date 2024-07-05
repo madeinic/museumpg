@@ -65,7 +65,7 @@ class GraphicsEngine:
         #Iniciar musica de fondo
         pg.mixer.init()
         pg.mixer.music.load('sound/polka.mp3')  
-        pg.mixer.music.set_volume(0.5)  # Ajusta el volumen de la música
+        pg.mixer.music.set_volume(0.2)  # Ajusta el volumen de la música
         pg.mixer.music.play(-1)  # Reproducir la música en bucle
 
         # Variable para almacenar el estado de la tecla

@@ -48,16 +48,30 @@ class Scene:
                 for y in range(cy, cy + n * s, s):
                     add(Cubo(app, vao_name='cube', tex_id=textura, pos=(cx, y, z)))
 
-    
+    def plataforma(self, posicion, orientacion, textura):
+        app = self 
+        add = self.add_object
         
+        x,y,z = posicion
+        
+        if orientacion == 'frontal':
+            add(Cubo(app, vao_name='cube', tex_id=textura, pos=(x, y, z), scale=(2,0.5,1)))
+            
+        if orientacion == 'lateral':
+            add(Cubo(app, vao_name='cube', tex_id=textura, pos=(x, y, z), scale=(1,0.5,2)))
+    
     def load(self):
         app = self.app
         add = self.add_object
         generarLosa = self.generarLosa
         generarPared = self.generarPared
+        plataforma = self.plataforma
         #Areas de sonido
-        
-        self.add_sound_area((0, -1, -10), 10, 'sound/woof.mp3',pg.K_f)
+        #Aves
+        self.add_sound_area((-10, -1, -80), 5, 'sound/Tucan.mp3',pg.K_f)
+        self.add_sound_area((-5, -1.09, -80), 5, 'sound/pato_mandarin.mp3',pg.K_f)
+        self.add_sound_area((0, 1, -80), 5, 'sound/Quetzal.mp3',pg.K_f)
+        self.add_sound_area((5, -1.09, -80), 5, 'sound/Pavo.mp3',pg.K_f)
         
         # Generar el suelo exterior
         generarLosa(30, (0, -2, 0),2)
@@ -96,18 +110,23 @@ class Scene:
         add(Armadillo(app, vao_name='armadillo', tex_id='armadillo', pos=(-20, -1, -75))) 
         add(Anaconda(app, vao_name='anaconda', tex_id='anaconda', pos=(-15, -1, -70)))
         add(Rana(app, vao_name='rana', tex_id='rana', pos=(-15, -1, -57)))
+        add(Frame3(app, vao_name='frame3', tex_id='frame3', pos=(-25, 1, -65)))
 
         #Seccion de aves
-        add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(-10, 2, -80)))
-        add(Pato(app, vao_name='pato', tex_id='pato', pos=(-5, -1.09, -80)))
-        add(Quetzal(app, vao_name='quetzal', tex_id='quetzal', pos=(0, 1, -80)))
-        add(Turkey(app, vao_name='turkey', tex_id='turkey', pos=(5, -1.09, -80)))
+        add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(-10, 1.5, -80)))
+        add(Pato(app, vao_name='pato', tex_id='pato', pos=(-5, 1.5, -80)))
+        add(Quetzal(app, vao_name='quetzal', tex_id='quetzal', pos=(0, 1.5, -80)))
+        add(Turkey(app, vao_name='turkey', tex_id='turkey', pos=(5, 1.5, -80)))
         add(Plataforma(app, vao_name='plataforma', tex_id='plataforma', pos=(0, -1, -83)))
         add(Frame(app, vao_name='frame', tex_id='frame', pos=(0, 1, -86)))
 
-        
+        #Troncos
+        add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(-10.4, 0, -80)))
+        add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(-5, 0, -80)))
         add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(0, 0, -80)))
-        add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(-10.4, 0.5, -80)))
+        add(Trunk(app, vao_name='trunk', tex_id='trunk', pos=(5, 0, -80)))
+
+
         add(Dino1(app, vao_name='dino1', tex_id='dino1', pos=(0, 6, -75)))
 
 
@@ -120,6 +139,7 @@ class Scene:
         add(PinkFish(app, vao_name='pinkfish', tex_id='pinkfish', pos=(20, -1, -63)))
         add(Diver(app, vao_name='diver', tex_id='diver', pos=(25, -1, -55)))
         add(Coral(app, vao_name='coral', tex_id='coral', pos=(23, -1, -60)))
+        add(Frame2(app, vao_name='frame2', tex_id='frame2', pos=(28, 1, -63)))
         
         #Seccion de en medio 
         add(Grass(app, vao_name='grass', tex_id='grass', pos=(-1, -1, -60)))

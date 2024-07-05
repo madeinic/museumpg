@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np 
 import moderngl as mgl
 import pywavefront
 import pywavefront.wavefront
@@ -41,6 +41,8 @@ class VBO:
         self.vbos['trunk'] = TrunkVBO(ctx)
         self.vbos['plataforma'] = PlataformaVBO(ctx)
         self.vbos['frame'] = FrameVBO(ctx)
+        self.vbos['frame2'] = Frame2VBO(ctx)
+        self.vbos['frame3'] = Frame3VBO(ctx)
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
@@ -156,6 +158,24 @@ class AdvancedSkyBoxVBO(BaseVBO):
         return vertex_data
 
 class FrameVBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/frame/fondo.obj') 
+    
+class Frame2VBO(BaseVBO):
+    def __init__(self, app):
+        super().__init__(app)
+        self.format = '2f 3f 3f'
+        self.attribs = ['in_texcoord_0', 'in_normal', 'in_position']
+        
+    def get_vertex_data(self):
+        return self.load_wavefront('objects/frame/fondo.obj') 
+    
+class Frame3VBO(BaseVBO):
     def __init__(self, app):
         super().__init__(app)
         self.format = '2f 3f 3f'

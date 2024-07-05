@@ -35,10 +35,32 @@ class VAO:
             program=self.program.programs['default'],
             vbo = self.vbo.vbos['frame'])
         
+        
         # shadow frame vao
         self.vaos['shadow_frame'] = self.get_vao(
             program=self.program.programs['shadow_map'],
             vbo = self.vbo.vbos['frame']) 
+        
+        # frame2 vao
+        self.vaos['frame2'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['frame2'])
+        
+        # shadow frame vao
+        self.vaos['shadow_frame2'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['frame2']) 
+
+        
+         # frame3 vao
+        self.vaos['frame3'] = self.get_vao(
+            program=self.program.programs['default'],
+            vbo = self.vbo.vbos['frame3'])
+        
+        # shadow frame vao
+        self.vaos['shadow_frame3'] = self.get_vao(
+            program=self.program.programs['shadow_map'],
+            vbo = self.vbo.vbos['frame3']) 
         
         # plataforma vao
         self.vaos['plataforma'] = self.get_vao(
