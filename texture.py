@@ -13,6 +13,8 @@ class Texture:
         self.textures[2] = self.get_texture(path='textures/cesped.jpeg')
         self.textures[3] = self.get_texture(path='textures/floor.png')
         self.textures[4] = self.get_texture(path='textures/Techo.png')
+        self.textures['arena'] = self.get_texture(path='textures/arena.jpeg')
+        self.textures['tierra'] = self.get_texture(path='textures/tierra.jpg')
         # Textura de la skybox
         self.textures['skybox'] = self.get_texture_cube(dir_path='textures/skybox/', ext='png')
         #texturas de modelos

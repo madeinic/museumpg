@@ -48,24 +48,25 @@ class Scene:
                 for y in range(cy, cy + n * s, s):
                     add(Cubo(app, vao_name='cube', tex_id=textura, pos=(cx, y, z)))
 
-    def plataforma(self, posicion, orientacion, textura):
+   
+    def plataforma(self, position, orientation, texture):
         app = self 
         add = self.add_object
         
-        x,y,z = posicion
+        px,py,pz = position
         
-        if orientacion == 'frontal':
-            add(Cubo(app, vao_name='cube', tex_id=textura, pos=(x, y, z), scale=(2,0.5,1)))
-            
-        if orientacion == 'lateral':
-            add(Cubo(app, vao_name='cube', tex_id=textura, pos=(x, y, z), scale=(1,0.5,2)))
+        if orientation == "lateral":
+            add(Cubo(app, vao_name='cube', tex_id=texture, pos=(px, py, pz), scale=(1,0.5,11)))
     
+        if orientation == "frontal":
+            add(Cubo(app, vao_name='cube', tex_id=texture, pos=(px, py, pz), scale=(11,0.5,1)))
+            
     def load(self):
         app = self.app
         add = self.add_object
         generarLosa = self.generarLosa
         generarPared = self.generarPared
-        plataforma = self.plataforma
+        #plataforma = self.plataforma
         #Areas de sonido
         #Aves
         self.add_sound_area((-10, -1, -80), 5, 'sound/Tucan.mp3',pg.K_f)
@@ -104,14 +105,24 @@ class Scene:
         #add(Perro(app, vao_name='perro', tex_id='perro', pos=(10, -1, -10)))  
         
         #Seccion de terrestres
+        
+        #camello tapir armadello
+        #plataforma((-20,-1,-59),'lateral','tierra')
         add(Tapir(app, vao_name='tapir', tex_id='tapir', pos=(-20, -1, -65))) #original -15,-1,-70
-        add(Camel(app, vao_name='camel', tex_id='camel', pos=(-20, -1, -55)))
+        add(Camel(app, vao_name='camel', tex_id='camel', pos=(-20, -0.8, -55)))
+        add(Armadillo(app, vao_name='armadillo', tex_id='armadillo', pos=(-20, -0.9, -75))) 
+        #rana lemur serpiente
+        #plataforma((-15,-1,-59),"lateral",'tierra')
+        add(Plataforma(app, vao_name='plataforma', tex_id='tierra', pos=(-20, -1, -57-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='tierra', pos=(-20, -1, -53-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='tierra', pos=(-20, -1, -49-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='tierra', pos=(-20, -1, -45-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='tierra', pos=(-20, -1, -40-15)))
+        add(Rana(app, vao_name='rana', tex_id='rana', pos=(-15, 0, -57)))
         add(Loris(app, vao_name='loris', tex_id='loris', pos=(-15, -1, -63)))
-        add(Armadillo(app, vao_name='armadillo', tex_id='armadillo', pos=(-20, -1, -75))) 
         add(Anaconda(app, vao_name='anaconda', tex_id='anaconda', pos=(-15, -1, -70)))
-        add(Rana(app, vao_name='rana', tex_id='rana', pos=(-15, -1, -57)))
-        add(Frame3(app, vao_name='frame3', tex_id='frame3', pos=(-25, 1, -65)))
-
+        add(Frame3(app, vao_name='frame3', tex_id='frame3', pos=(-25, -1, -65)))
+        
         #Seccion de aves
         add(Tucan(app, vao_name='tucan', tex_id='tucan', pos=(-10, 1.5, -80)))
         add(Pato(app, vao_name='pato', tex_id='pato', pos=(-5, 1.5, -80)))
@@ -131,7 +142,12 @@ class Scene:
 
 
         #Seccion de acuaticos
-        add(SeaDragon(app, vao_name='seadragon', tex_id='seadragon', pos=(13, -1, -5)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='arena', pos=(27, -1, -57-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='arena', pos=(27, -1, -53-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='arena', pos=(27, -1, -49-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='arena', pos=(27, -1, -45-15)))
+        add(Plataforma(app, vao_name='plataforma', tex_id='arena', pos=(27, -1, -40-15)))
+        add(SeaDragon(app, vao_name='seadragon', tex_id='seadragon', pos=(13,200.8, -5)))
         add(Dolphin(app, vao_name='dolphin', tex_id='dolphin', pos=(25, -1, -65)))
         add(Penguin(app, vao_name='penguin', tex_id='penguin', pos=(25, -1, -75)))
         add(SeaHorse(app, vao_name='seahorse', tex_id='seahorse', pos=(20, -1, -70)))
