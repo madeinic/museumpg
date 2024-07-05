@@ -80,3 +80,5 @@ The project was inspired by [aagyo](https://github.com/aagyo/OpenGL-Museum?tab=r
 
 Models provided by [printable_models](https://free3d.com/user/printable_models)
 
+## Video link:
+https://youtu.be/QODSXA7jR2M
