@@ -69,29 +69,29 @@ class Scene:
         #plataforma = self.plataforma
         #Areas de sonido
         #Aves
-        self.add_sound_area((-10, -1, -80), 5, 'sound/Tucan.mp3',pg.K_f)
-        self.add_sound_area((-5, -1.09, -80), 5, 'sound/pato_mandarin.mp3',pg.K_f)
+        self.add_sound_area((-10, 1 , -80), 5, 'sound/Tucan.mp3',pg.K_f)
+        self.add_sound_area((-5, 1, -80), 5, 'sound/pato_mandarin.mp3',pg.K_f)
         self.add_sound_area((0, 1, -80), 5, 'sound/Quetzal.mp3',pg.K_f)
-        self.add_sound_area((5, -1.09, -80), 5, 'sound/Pavo.mp3',pg.K_f)
+        self.add_sound_area((5, 1, -80), 5, 'sound/Pavo.mp3',pg.K_f)
 
         #Acuatico
-        self.add_sound_area((25, 0, -65), 4, 'sound/Delfin.mp3',pg.K_f)
-        self.add_sound_area((25, 0, -75), 4, 'sound/Penguin.mp3',pg.K_f)
-        self.add_sound_area((20, 0, -70), 4, 'sound/caballo_mar.mp3',pg.K_f)
-        self.add_sound_area((20, 0, -55), 4, 'sound/Cangrejo.mp3',pg.K_f)
-        self.add_sound_area((20, 0, -63), 4, 'sound/Burbuja.mp3',pg.K_f)
+        self.add_sound_area((25, 1, -65), 4, 'sound/Delfin.mp3',pg.K_f)
+        self.add_sound_area((25, 1, -75), 4, 'sound/Penguin.mp3',pg.K_f)
+        self.add_sound_area((20, 1, -70), 4, 'sound/caballo_mar.mp3',pg.K_f)
+        self.add_sound_area((20, 1, -55), 4, 'sound/Cangrejo.mp3',pg.K_f)
+        self.add_sound_area((20, 1, -63), 4, 'sound/Burbuja.mp3',pg.K_f)
 
         #Terrestre
-        self.add_sound_area((-20, -1, -65), 4, 'sound/Tapir.mp3',pg.K_f)
-        self.add_sound_area((-20, -0.8, -55), 4, 'sound/Camello.mp3',pg.K_f)
-        self.add_sound_area((-20, -0.9, -75), 4, 'sound/Armadillo.mp3',pg.K_f)
-        self.add_sound_area((-15, 0, -57), 4, 'sound/Rana.mp3',pg.K_f)
-        self.add_sound_area((-15, -1, -63), 4, 'sound/Loris.mp3',pg.K_f)
-        self.add_sound_area((-15, -1, -70), 4, 'sound/Anaconda.mp3',pg.K_f)
+        self.add_sound_area((-20, 1, -65), 4, 'sound/Tapir.mp3',pg.K_f)
+        self.add_sound_area((-20, 1, -55), 4, 'sound/Camello.mp3',pg.K_f)
+        self.add_sound_area((-20, 1, -75), 4, 'sound/Armadillo.mp3',pg.K_f)
+        self.add_sound_area((-15, 1, -57), 4, 'sound/Rana.mp3',pg.K_f)
+        self.add_sound_area((-15, 1, -63), 4, 'sound/Loris.mp3',pg.K_f)
+        self.add_sound_area((-15, 1, -70), 4, 'sound/Anaconda.mp3',pg.K_f)
      
         # Generar el suelo exterior
-        generarLosa(30, (0, -2, 0),2)
         generarLosa(30,(0,-2, -60),3)
+        generarLosa(150, (0, -2, 0),2)
         #techo
         generarLosa(30,(0,19, -60),4)
         # Generar las paredes de la estructura de exhibición
@@ -176,7 +176,7 @@ class Scene:
         add(Grass(app, vao_name='grass', tex_id='grass', pos=(-1, -1, -60)))
         add(Dino2(app, vao_name='dino2', tex_id='dino2', pos=(-1, -1, -60)))
 
-        add(CartelFinal(app, vao_name='CartelFinal', tex_id='CartelFinal', pos=(12, -1, -5)))
+        #add(CartelFinal(app, vao_name='CartelFinal', tex_id='CartelFinal', pos=(12, -1, -5)))
         
         #Columnas
         add(columna(app, vao_name='columna', tex_id='columna', pos=(18, -18, -83)))

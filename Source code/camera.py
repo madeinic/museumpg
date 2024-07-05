@@ -4,7 +4,7 @@ from time import sleep
 
 FOV = 50  # deg
 NEAR = 0.1
-FAR = 100
+FAR = 110
 BASE_SPEED = 0.005
 BOOSTED_SPEED = 0.10  # Velocidad aumentada al presionar Shift
 SENSITIVITY = 0.04
@@ -24,7 +24,7 @@ class Camera:
         self.max_height = max_height
         # view matrix
         self.m_view = self.get_view_matrix()
-        # projection matrix
+ # projection matrix
         self.m_proj = self.get_projection_matrix()
 
     def rotate(self):
