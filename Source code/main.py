@@ -15,7 +15,10 @@ class GraphicsEngine:
         # inicializar modulo pygame
         pg.init()
         # Tamaño de ventana
-        self.WIN_SIZE = win_size
+        display_info = pg.display.Info()
+        self.WIN_SIZE = (display_info.current_w, display_info.current_h)
+        # crear contexto para opengl
+        pg.display.set_mode(self.WIN_SIZE, flags=pg.OPENGL | pg.DOUBLEBUF | pg.FULLSCREEN)
         # establecer atributos de la version de opengl a usar
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MAJOR_VERSION, 3)
         pg.display.gl_set_attribute(pg.GL_CONTEXT_MINOR_VERSION, 3)
