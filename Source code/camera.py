@@ -79,7 +79,7 @@ class Camera:
             self.position = potential_position
 
         # Limitar la altura de la cámara
-        #self.position.y = max(self.min_height, min(self.max_height, self.position.y))
+        self.position.y = max(self.min_height, min(self.max_height, self.position.y))
 
     #funciona para verificar si la camara esta tocando una caja delimitadora
     def detect_collision(self, new_position):
